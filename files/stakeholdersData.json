@@ -1,0 +1,352 @@
+{	
+    "type": "FeatureCollection",	
+    "name": "Designers_2",	
+    "crs": {	
+      "type": "name",	
+      "properties": {	
+        "name": "urn:ogc:def:crs:OGC:1.3:CRS84"	
+      }	
+    },	
+    "features": [	
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Labels and Certifications</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1965",	
+          "YEAR_D": "2000",	
+          "IMG_SRC_D": "<img src=\" /Labels-and-Certifications-Icon.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "<b>Some details</b>",	
+          "WORK_PREC": "<",	
+          "WORKS_IMG1": ""	
+        }	
+      } ,
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Real Estate Developers</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1955",	
+          "YEAR_D": "1979",	
+          "IMG_SRC_D": "<img src=\" /real-estate-icon.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "<b>Some details</b>",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Private Investors</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1950",	
+          "YEAR_D": "1969",	
+          "IMG_SRC_D": "<img src=\" /private-Investors-icon.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Financial Insitutionsand Banks</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1940",	
+          "YEAR_D": "1969",	
+          "IMG_SRC_D": "<img src=\" /fin-banks-icon.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Public Investorsand Financial Aid</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1950",	
+          "YEAR_D": "1999",	
+          "IMG_SRC_D": "<img src=\" /public-investors-icon.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Local City Strategy</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1940",	
+          "YEAR_D": "1979",	
+          "IMG_SRC_D": "<img src=\" /local-city-strategy.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+        
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Government Department</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1950",	
+          "YEAR_D": "1989",	
+          "IMG_SRC_D": "<img src=\" /govt-dep.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Recycled Material WholeSale</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#009193",
+          "YEAR_B": "1950",	
+          "YEAR_D": "2020",	
+          "IMG_SRC_D": "<img src=\" /recycled-wholesale.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Waste Treatment Companies</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#009193",
+          "YEAR_B": "1950",	
+          "YEAR_D": "2030",	
+          "IMG_SRC_D": "<img src=\" /waste-treatment.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Transportation Logistics</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#009193",
+          "YEAR_B": "1960",	
+          "YEAR_D": "2010",	
+          "IMG_SRC_D": "<img src=\" /transportation.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Deconstruction Companies</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#009193",
+          "YEAR_B": "1950",	
+          "YEAR_D": "2030",	
+          "IMG_SRC_D": "<img src=\" /deconstruction-companies.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Construction Companies</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#009193",
+          "YEAR_B": "1950",	
+          "YEAR_D": "2030",	
+          "IMG_SRC_D": "<img src=\" /construction-companies.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Suppliers Vendors</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#009193",
+          "YEAR_B": "1950",	
+          "YEAR_D": "2000",	
+          "IMG_SRC_D": "<img src=\" /suppliers.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Training Schools</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#009193",
+          "YEAR_B": "1945",	
+          "YEAR_D": "2030",	
+          "IMG_SRC_D": "<img src=\" /training-schools.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Non-Profits + NGOs</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#009193",
+          "YEAR_B": "1980",	
+          "YEAR_D": "2040",	
+          "IMG_SRC_D": "<img src=\" /NGOs-icon.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Institutions and Researchers</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#009193",
+          "YEAR_B": "1970",	
+          "YEAR_D": "2020",	
+          "IMG_SRC_D": "<img src=\" /institutions-icon.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Users + Citizen Initative</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#9bc2e6",
+          "YEAR_B": "1940",	
+          "YEAR_D": "2000",	
+          "IMG_SRC_D": "<img src=\" /users.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },{	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Building Operators + Managers</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#9bc2e6",
+          "YEAR_B": "1955",	
+          "YEAR_D": "1990",	
+          "IMG_SRC_D": "<img src=\" /building-operators.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Owners</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#e2efda",
+          "YEAR_B": "1960",	
+          "YEAR_D": "1990",	
+          "IMG_SRC_D": "<img src=\" /building-operators.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Engineers and Building Experts</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#e2efda",
+          "YEAR_B": "1950",	
+          "YEAR_D": "1990",	
+          "IMG_SRC_D": "<img src=\" /engineers.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Architects and Designers</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#e2efda",
+          "YEAR_B": "1965",	
+          "YEAR_D": "1990",	
+          "IMG_SRC_D": "<img src=\" /architects.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      }
+
+
+       	
+]
+    	
+  }

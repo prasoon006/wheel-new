@@ -1,0 +1,14 @@
+{
+  "name": "594367f808372e2a",
+  "main": "594367f808372e2a@2033.js",
+  "version": "2033.0.0",
+  "homepage": "https://observablehq.com/d/594367f808372e2a",
+  "author": {
+    "name": "Prasoon Jain",
+    "url": "https://observablehq.com/@prasoonjain006"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}
