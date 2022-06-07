@@ -11,119 +11,6 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Labels and Certifications</b>",	
-          "SURNAME": "",	
-          "MARRIEDN": "",	
-          "COLOR": "#a9d08e",
-          "YEAR_B": "1965",	
-          "YEAR_D": "2000",	
-          "IMG_SRC_D": "<img src=\" /Labels-and-Certifications-Icon.png\">",	
-          "IMAGE": "",	
-          "WORKS_NA_2": "<b>Some details</b>",	
-          "WORK_PREC": "<",	
-          "WORKS_IMG1": ""	
-        }	
-      } ,
-      {	
-        "type": "Feature",	
-        "properties": {	
-          "NAME": "<b>Real Estate Developers</b>",	
-          "SURNAME": "",	
-          "MARRIEDN": "",	
-          "COLOR": "#a9d08e",
-          "YEAR_B": "1955",	
-          "YEAR_D": "1979",	
-          "IMG_SRC_D": "<img src=\" /real-estate-icon.png\">",	
-          "IMAGE": "",	
-          "WORKS_NA_2": "<b>Some details</b>",	
-          "WORK_PREC": "",	
-          "WORKS_IMG1": ""	
-        }	
-      },
-      {	
-        "type": "Feature",	
-        "properties": {	
-          "NAME": "<b>Private Investors</b>",	
-          "SURNAME": "",	
-          "MARRIEDN": "",	
-          "COLOR": "#a9d08e",
-          "YEAR_B": "1950",	
-          "YEAR_D": "1969",	
-          "IMG_SRC_D": "<img src=\" /private-Investors-icon.png\">",	
-          "IMAGE": "",	
-          "WORKS_NA_2": "",	
-          "WORK_PREC": "",	
-          "WORKS_IMG1": ""	
-        }	
-      },
-      {	
-        "type": "Feature",	
-        "properties": {	
-          "NAME": "<b>Financial Insitutionsand Banks</b>",	
-          "SURNAME": "",	
-          "MARRIEDN": "",	
-          "COLOR": "#a9d08e",
-          "YEAR_B": "1940",	
-          "YEAR_D": "1969",	
-          "IMG_SRC_D": "<img src=\" /fin-banks-icon.png\">",	
-          "IMAGE": "",	
-          "WORKS_NA_2": "",	
-          "WORK_PREC": "",	
-          "WORKS_IMG1": ""	
-        }	
-      },
-      {	
-        "type": "Feature",	
-        "properties": {	
-          "NAME": "<b>Public Investorsand Financial Aid</b>",	
-          "SURNAME": "",	
-          "MARRIEDN": "",	
-          "COLOR": "#a9d08e",
-          "YEAR_B": "1950",	
-          "YEAR_D": "1999",	
-          "IMG_SRC_D": "<img src=\" /public-investors-icon.png\">",	
-          "IMAGE": "",	
-          "WORKS_NA_2": "",	
-          "WORK_PREC": "",	
-          "WORKS_IMG1": ""	
-        }	
-      },
-      {	
-        "type": "Feature",	
-        "properties": {	
-          "NAME": "<b>Local City Strategy</b>",	
-          "SURNAME": "",	
-          "MARRIEDN": "",	
-          "COLOR": "#a9d08e",
-          "YEAR_B": "1940",	
-          "YEAR_D": "1979",	
-          "IMG_SRC_D": "<img src=\" /local-city-strategy.png\">",	
-          "IMAGE": "",	
-          "WORKS_NA_2": "",	
-          "WORK_PREC": "",	
-          "WORKS_IMG1": ""	
-        }	
-        
-      },
-      {	
-        "type": "Feature",	
-        "properties": {	
-          "NAME": "<b>Government Department</b>",	
-          "SURNAME": "",	
-          "MARRIEDN": "",	
-          "COLOR": "#a9d08e",
-          "YEAR_B": "1950",	
-          "YEAR_D": "1989",	
-          "IMG_SRC_D": "<img src=\" /govt-dep.png\">",	
-          "IMAGE": "",	
-          "WORKS_NA_2": "",	
-          "WORK_PREC": "",	
-          "WORKS_IMG1": ""	
-        }	
-      },
-      {	
-        "type": "Feature",	
-        "properties": {	
           "NAME": "<b>Recycled Material WholeSale</b>",	
           "SURNAME": "",	
           "MARRIEDN": "",	
@@ -296,6 +183,7 @@
           "WORKS_IMG1": ""	
         }	
       },
+      
       {	
         "type": "Feature",	
         "properties": {	
@@ -343,7 +231,122 @@
           "WORK_PREC": "",	
           "WORKS_IMG1": ""	
         }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Labels and Certifications</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1965",	
+          "YEAR_D": "2000",	
+          "IMG_SRC_D": "<img src=\" /Labels-and-Certifications-Icon.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "<b>Some details</b>",	
+          "WORK_PREC": "<",	
+          "WORKS_IMG1": ""	
+        }	
+      } ,
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Real Estate Developers</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1955",	
+          "YEAR_D": "1979",	
+          "IMG_SRC_D": "<img src=\" /real-estate-icon.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "<b>Some details</b>",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Private Investors</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1950",	
+          "YEAR_D": "1969",	
+          "IMG_SRC_D": "<img src=\" /private-Investors-icon.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Financial Insitutionsand Banks</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1940",	
+          "YEAR_D": "1969",	
+          "IMG_SRC_D": "<img src=\" /fin-banks-icon.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Public Investorsand Financial Aid</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1950",	
+          "YEAR_D": "1999",	
+          "IMG_SRC_D": "<img src=\" /public-investors-icon.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Local City Strategy</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1940",	
+          "YEAR_D": "1979",	
+          "IMG_SRC_D": "<img src=\" /local-city-strategy.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
+        
+      },
+      {	
+        "type": "Feature",	
+        "properties": {	
+          "NAME": "<b>Government Department</b>",	
+          "SURNAME": "",	
+          "MARRIEDN": "",	
+          "COLOR": "#a9d08e",
+          "YEAR_B": "1950",	
+          "YEAR_D": "1989",	
+          "IMG_SRC_D": "<img src=\" /govt-dep.png\">",	
+          "IMAGE": "",	
+          "WORKS_NA_2": "",	
+          "WORK_PREC": "",	
+          "WORKS_IMG1": ""	
+        }	
       }
+     
+      
 
 
        	
