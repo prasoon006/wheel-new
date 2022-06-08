@@ -177,11 +177,11 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
 
 
-        
+
       const rectBar1 = chartElGroup
-      .append("g")
-      .attr("id", "barsGroup")
-      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
 
 
 
@@ -200,8 +200,8 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
             .arc()
             .innerRadius((d) => y(+d["YEAR_B"]))
             .outerRadius((d) => y(+d["YEAR_D"] || 2021))
-            .startAngle((d) => x(d.id) + 0.09)
-            .endAngle((d) => x(d.id) + x.bandwidth() - 0.09)
+            .startAngle((d) => x(d.id) + 0.11)
+            .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
             .padAngle(-0.4)
             .padRadius(outerRadius)
         )
@@ -215,7 +215,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
 
 
-        rectBar1
+      rectBar1
         .selectAll("path")
         .style('z-index', 3)
         .data(data)
@@ -227,10 +227,10 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
           "d",
           d3
             .arc()
-            .innerRadius((d) => y(+d["YEAR_B1"]) )
-            .outerRadius((d) => y(+d["YEAR_D1"] ))
-            .startAngle((d) => x(d.id) + 0.09)
-            .endAngle((d) => x(d.id) + x.bandwidth() - 0.09)
+            .innerRadius((d) => y(+d["YEAR_B1"]))
+            .outerRadius((d) => y(+d["YEAR_D1"]))
+            .startAngle((d) => x(d.id) + 0.11)
+            .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
             .padAngle(-0.4)
             .padRadius(outerRadius)
         )
@@ -550,7 +550,8 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
           d3.select('#womenInfo')
             .selectAll('text')
-            .style('opacity', (d) => (d.YEAR_B < 1940 && d.YEAR_D > 1940) || (d.YEAR_B < 1965 && d.YEAR_D > 1965) ? 1 : 0.2)
+            .style('opacity', (d) => ((d.YEAR_B <= 1940 && d.YEAR_D > 1940) || (d.YEAR_B < 1965 && d.YEAR_D >= 1965) || ((d.YEAR_B1 <= 1940 && d.YEAR_D1 > 1940) || (d.YEAR_B1 < 1965 && d.YEAR_D1 >= 1965))) ? 1 : 0.1)
+
 
         })
 
@@ -581,7 +582,8 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
             .style('opacity', 0.4)
           d3.select('#womenInfo')
             .selectAll('text')
-            .style('opacity', (d) => (d.YEAR_B < 1965 && d.YEAR_D > 1965) || (d.YEAR_B < 1990 && d.YEAR_D > 1990) ? 1 : 0.2)
+            .style('opacity', (d) => (d.YEAR_B <= 1965 && d.YEAR_D > 1965) || (d.YEAR_B < 1990 && d.YEAR_D >= 1990) || (d.YEAR_B1 <= 1965 && d.YEAR_D1 > 1965) || (d.YEAR_B1 < 1990 && d.YEAR_D1 >= 1990) ? 1 : 0.1)
+           
 
         })
 
@@ -610,7 +612,8 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
             .style('opacity', 0.4)
           d3.select('#womenInfo')
             .selectAll('text')
-            .style('opacity', (d) => (d.YEAR_B < 1990 && d.YEAR_D > 1990) || (d.YEAR_B < 2015 && d.YEAR_D > 2015) ? 1 : 0.2)
+            .style('opacity', (d) => (d.YEAR_B <= 1990 && d.YEAR_D > 1990) || (d.YEAR_B < 2015 && d.YEAR_D >= 2015) || (d.YEAR_B1 <= 1990 && d.YEAR_D1 > 1990) || (d.YEAR_B1 < 2015 && d.YEAR_D1 >= 2015) ? 1 : 0.1)
+
 
         })
 
@@ -641,7 +644,8 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
             .style('opacity', 0.4)
           d3.select('#womenInfo')
             .selectAll('text')
-            .style('opacity', (d) => (d.YEAR_B < 2015 && d.YEAR_D > 2015) || (d.YEAR_B < 2040 && d.YEAR_D > 2040) ? 1 : 0.2)
+            .style('opacity', (d) => (d.YEAR_B <= 2015 && d.YEAR_D > 2015) || (d.YEAR_B < 2040 && d.YEAR_D >= 2040) || (d.YEAR_B1 <= 2015 && d.YEAR_D1 > 2015) || (d.YEAR_B1 < 2040 && d.YEAR_D1 >= 2040) ? 1 : 0.1)
+          
 
         })
 
@@ -753,7 +757,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
             .text((d) => `${d.NAME} `)
             .style("font-size", "20px")
             .style('font-family', 'inter')
-            .style('fill', (d)=> d.COLOR || 'black')
+            .style('fill', (d) => d.COLOR || 'black')
             .style('opacity', 1)
 
             .style("dominant-baseline", "middle")
@@ -781,8 +785,8 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
             .text((d) => `${d.SURNAME}.`)
             .style("font-size", "20px")
             .style('font-family', 'inter')
-      
-            .style('fill', (d)=> d.COLOR || 'black')
+
+            .style('fill', (d) => d.COLOR || 'black')
             .style('opacity', 1)
 
             .style("dominant-baseline", "middle")
