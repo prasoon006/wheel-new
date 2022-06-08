@@ -11,12 +11,14 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Recycled Material WholeSale</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Recycled Material </b>",	
+          "SURNAME": "WholeSale",	
           "MARRIEDN": "",	
           "COLOR": "#009193",
-          "YEAR_B": "1950",	
-          "YEAR_D": "2020",	
+          "YEAR_B": "1940",	
+          "YEAR_D": "1972",	
+          "YEAR_B1":"2025",
+          "YEAR_D1":"2040",
           "IMG_SRC_D": "<img src=\" /recycled-wholesale.png\">",	
           "IMAGE": "",	
           "WORKS_NA_2": "",	
@@ -27,12 +29,14 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Waste Treatment Companies</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Waste Treatment </b>",	
+          "SURNAME": "Companies",	
           "MARRIEDN": "",	
           "COLOR": "#009193",
-          "YEAR_B": "1950",	
-          "YEAR_D": "2030",	
+          "YEAR_B": "1940",	
+          "YEAR_D": "1978",	
+          "YEAR_B1":"2015",
+          "YEAR_D1":"2040",
           "IMG_SRC_D": "<img src=\" /waste-treatment.png\">",	
           "IMAGE": "",	
           "WORKS_NA_2": "",	
@@ -43,12 +47,14 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Transportation Logistics</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Transportation </b>",	
+          "SURNAME": "Logistics",	
           "MARRIEDN": "",	
           "COLOR": "#009193",
-          "YEAR_B": "1960",	
-          "YEAR_D": "2010",	
+          "YEAR_B": "1965",	
+          "YEAR_D": "1990",	
+          "YEAR_B1":"2015",
+          "YEAR_D1":"2040",
           "IMG_SRC_D": "<img src=\" /transportation.png\">",	
           "IMAGE": "",	
           "WORKS_NA_2": "",	
@@ -59,12 +65,14 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Deconstruction Companies</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Deconstruction </b>",	
+          "SURNAME": "Companies",	
           "MARRIEDN": "",	
           "COLOR": "#009193",
-          "YEAR_B": "1950",	
-          "YEAR_D": "2030",	
+          "YEAR_B": "1955",	
+          "YEAR_D": "1975",	
+          "YEAR_B1":"2015",
+          "YEAR_D1":"2040",
           "IMG_SRC_D": "<img src=\" /deconstruction-companies.png\">",	
           "IMAGE": "",	
           "WORKS_NA_2": "",	
@@ -75,12 +83,14 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Construction Companies</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Construction </b>",	
+          "SURNAME": "Companies",	
           "MARRIEDN": "",	
           "COLOR": "#009193",
-          "YEAR_B": "1950",	
-          "YEAR_D": "2030",	
+          "YEAR_B": "1955",	
+          "YEAR_D": "1990",	
+          "YEAR_B1":"2023",
+          "YEAR_D1":"2040",
           "IMG_SRC_D": "<img src=\" /construction-companies.png\">",	
           "IMAGE": "",	
           "WORKS_NA_2": "",	
@@ -91,12 +101,14 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Suppliers Vendors</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Suppliers </b>",	
+          "SURNAME": "Vendors",	
           "MARRIEDN": "",	
           "COLOR": "#009193",
-          "YEAR_B": "1950",	
-          "YEAR_D": "2000",	
+          "YEAR_B": "1955",	
+          "YEAR_D": "1980",	
+          "YEAR_B1":"2028",
+          "YEAR_D1":"2040",
           "IMG_SRC_D": "<img src=\" /suppliers.png\">",	
           "IMAGE": "",	
           "WORKS_NA_2": "",	
@@ -107,12 +119,14 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Training Schools</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Training </b>",	
+          "SURNAME": "Schools",	
           "MARRIEDN": "",	
           "COLOR": "#009193",
-          "YEAR_B": "1945",	
-          "YEAR_D": "2030",	
+          "YEAR_B": "1940",	
+          "YEAR_D": "1990",	
+          "YEAR_B1":"2010",
+          "YEAR_D1":"2040",
           "IMG_SRC_D": "<img src=\" /training-schools.png\">",	
           "IMAGE": "",	
           "WORKS_NA_2": "",	
@@ -123,8 +137,8 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Non-Profits + NGOs</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Non-Profits </b>",	
+          "SURNAME": "+ NGOs",	
           "MARRIEDN": "",	
           "COLOR": "#009193",
           "YEAR_B": "1980",	
@@ -139,8 +153,8 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Institutions and Researchers</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Institutions </b>",	
+          "SURNAME": "and Researchers",	
           "MARRIEDN": "",	
           "COLOR": "#009193",
           "YEAR_B": "1970",	
@@ -155,8 +169,8 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Users + Citizen Initative</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Users + </b>",	
+          "SURNAME": "Citizen Initative",	
           "MARRIEDN": "",	
           "COLOR": "#9bc2e6",
           "YEAR_B": "1940",	
@@ -170,8 +184,8 @@
       },{	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Building Operators + Managers</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Building Operators </b>",	
+          "SURNAME": " + Managers",	
           "MARRIEDN": "",	
           "COLOR": "#9bc2e6",
           "YEAR_B": "1955",	
@@ -203,8 +217,8 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Engineers and Building Experts</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Engineers and </b>",	
+          "SURNAME": "Building Experts",	
           "MARRIEDN": "",	
           "COLOR": "#e2efda",
           "YEAR_B": "1950",	
@@ -219,8 +233,8 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Architects and Designers</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Architects and </b>",	
+          "SURNAME": " Designers",	
           "MARRIEDN": "",	
           "COLOR": "#e2efda",
           "YEAR_B": "1965",	
@@ -235,8 +249,8 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Labels and Certifications</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Labels and </b>",	
+          "SURNAME": "Certifications",	
           "MARRIEDN": "",	
           "COLOR": "#a9d08e",
           "YEAR_B": "1965",	
@@ -251,8 +265,8 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Real Estate Developers</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Real Estate </b>",	
+          "SURNAME": "Developers",	
           "MARRIEDN": "",	
           "COLOR": "#a9d08e",
           "YEAR_B": "1955",	
@@ -267,8 +281,8 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Private Investors</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Private </b>",	
+          "SURNAME": "Investors",	
           "MARRIEDN": "",	
           "COLOR": "#a9d08e",
           "YEAR_B": "1950",	
@@ -283,8 +297,8 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Financial Insitutionsand Banks</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Financial Insitutions</b>",	
+          "SURNAME": " and Banks",	
           "MARRIEDN": "",	
           "COLOR": "#a9d08e",
           "YEAR_B": "1940",	
@@ -299,8 +313,8 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Public Investorsand Financial Aid</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Public Investorsand </b>",	
+          "SURNAME": "Financial Aid",	
           "MARRIEDN": "",	
           "COLOR": "#a9d08e",
           "YEAR_B": "1950",	
@@ -315,8 +329,8 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Local City Strategy</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Local City </b>",	
+          "SURNAME": " Strategy",	
           "MARRIEDN": "",	
           "COLOR": "#a9d08e",
           "YEAR_B": "1940",	
@@ -332,8 +346,8 @@
       {	
         "type": "Feature",	
         "properties": {	
-          "NAME": "<b>Government Department</b>",	
-          "SURNAME": "",	
+          "NAME": "<b>Government </b>",	
+          "SURNAME": "Department",	
           "MARRIEDN": "",	
           "COLOR": "#a9d08e",
           "YEAR_B": "1950",	
