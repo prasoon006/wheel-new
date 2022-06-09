@@ -1,5 +1,7 @@
 import define1 from "./a2e58f97fd5e8d7c@736.js";
 
+
+
 function _1(md) {
   return (
     md`# 
@@ -72,7 +74,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("x", width / 2)
         .attr("y", initPosit)
         .text(locale[languageSelector].title.a)
-        .style('font-family', 'inter')
+        .attr('font-family', 'Inter')
         .style("font-size", fontSize)
         .style("text-anchor", "middle");
       titleChart
@@ -80,7 +82,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("x", width / 2)
         .attr("y", initPosit + diffPosit)
         .text(locale[languageSelector].title.b)
-        .style('font-family', 'inter')
+        .attr('font-family', 'Inter')
         .style("font-weight", 800)
         .style("font-size", fontSize)
         .style("fill", colorMain)
@@ -90,7 +92,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("x", width / 2)
         .attr("y", initPosit + diffPosit * 2)
         .text(locale[languageSelector].title.c)
-        .style('font-family', 'inter')
+        .attr('font-family', 'Inter')
         .style("font-size", fontSize)
         .style("text-anchor", "middle");
       titleChart
@@ -98,7 +100,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("x", width / 2)
         .attr("y", initPosit + diffPosit * 3)
         .text(locale[languageSelector].title.d)
-        .style('font-family', 'inter')
+        .attr('font-family', 'Inter')
         .style("font-size", fontSize)
         .style("text-anchor", "middle");
 
@@ -129,7 +131,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("x", width / 2)
         .attr("y", margin.top + height / 2 - 25)
         .text(locale[languageSelector].centerText.a)
-        .style('font-family', 'inter')
+        .attr('font-family', 'Inter')
         .style("font-size", "19px")
         .style("dominant-baseline", "hanging")
         .style("text-anchor", "middle")
@@ -140,7 +142,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("x", width / 2)
         .attr("y", margin.top + height / 2)
         .text(locale[languageSelector].centerText.b)
-        .style('font-family', 'inter')
+        .attr('font-family', 'Inter')
         .style("font-size", "19px")
         // .style("font-weight", 800)
         .style("dominant-baseline", "hanging")
@@ -152,7 +154,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("x", width / 2)
         .attr("y", margin.top + height / 2 + 20)
         .text(locale[languageSelector].centerText.c)
-        .style('font-family', 'inter')
+        .attr('font-family', 'Inter')
         .style("font-size", "12px")
         .style("dominant-baseline", "hanging")
         .style("text-anchor", "middle")
@@ -312,8 +314,8 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
       const constDates = chartElGroup.append("g").attr("id", "circlesDates");
       const constDates1 = chartElGroup.append("g").attr("id", "circlesDates");
 
-      const innerData = ["", ".    DESIGN", , "", "BUILD", "", ".       USE", "", ".  END OF"];
-      const color = ['green', 'blue', 'green', 'blue', 'green', 'blue', 'green'];
+      // const innerData = ["", ".    DESIGN", , "", "BUILD", "", ".       USE", "", ".  END OF"];
+
 
 
 
@@ -359,7 +361,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         //         .style('stroke', (d) => col(d.name)) 
         // .style("stroke", (d,i)=> color[i])
 
-        .style("stroke", 'blue')
+        .style("stroke", 'black')
         .style("stroke-dasharray", "3")
         .style("pointer-events", "none");
 
@@ -367,29 +369,85 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
 
       constDates
-        .selectAll("text")
-        .data(innerData)
+        .selectAll("text_design")
+        .data(['DESIGN'])
         .join("text")
-        .attr("x", (d, i) => width / 2 + 183 + i * 18 + (i - 4) * 2)
+        .attr('id','text_design')
+        .attr("x", (d, i) => width / 2 +200)
         .attr("y", (d) => height / 2)
         .text((d) => d)
         .style("fill", "black")
         .style("opacity", 1)
-        .style('font-family', 'inter')
+        .style('font-weight','600')
+        .attr('font-family', 'Inter')
+        .style("font-size", "13px")
+        .style("pointer-events", "none")
+     
+
+
+        constDates
+        .selectAll("text_build")
+        .attr('id','text_build')
+        .data(['BUILD'])
+        .join("text")
+        .attr("x", (d, i) => width / 2 + 254)
+        .attr("y", (d) => height / 2)
+        .text((d) => d)
+        .style("fill", "black")
+        .style("opacity", 1)
+        .style('font-weight','600')
+        .attr('font-family', 'Inter')
         .style("font-size", "13px")
         .style("pointer-events", "none");
+
+
+        constDates
+        .selectAll("text_use")
+        .attr('id','text_use')
+        .data(['USE'])
+        .join("text")
+        .attr("x", (d, i) => width / 2 + 304)
+        .attr("y", (d) => height / 2)
+        .text((d) => d)
+        .style("fill", "black")
+        .style("opacity", 1)
+        .style('font-weight','600')
+        .attr('font-family', 'Inter')
+        .style("font-size", "13px")
+        .style("pointer-events", "none");
+
+        constDates
+        .selectAll("text_endof")
+        .attr('id','text_endof')
+        .data(['END OF'])
+        .join("text")
+        .attr("x", (d, i) => width / 2 + 340)
+        .attr("y", (d) => height / 2)
+        .text((d) => d)
+        .style('font-weight','600')
+        .style("fill", "black")
+        .style("opacity", 0.9)
+        .attr('font-family', 'Inter')
+        .style("font-size", "13px")
+        .style("pointer-events", "none");
+
+
+
+        
 
 
       constDates
         .selectAll("text2")
         .data(["LIFE"])
+        .attr('id','text_endof')
         .join("text")
         .attr("x", (d, i) => width / 2 + 350)
         .attr("y", (d) => height / 2 + 20)
         .text((d) => d)
         .style("fill", "black")
-        .style("opacity", 1)
-        .style('font-family', 'inter')
+        .style("opacity", 0.9)
+        .style('font-weight','600')
+        .attr('font-family', 'Inter')
         .style("font-size", "13px")
         .style("pointer-events", "none");
 
@@ -448,7 +506,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
         .style("fill", "black")
         .style("opacity", 1)
-        .style('font-family', 'inter')
+        .attr("font-family", "Inter")
         .style("font-size", "15px")
         .style("pointer-events", "none");
 
@@ -491,7 +549,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .style("fill", "black")
         .style("opacity", 1)
         .style("font-size", "15px")
-        .style('font-family', 'inter')
+        .attr('font-family', 'Inter')
         .style("pointer-events", "none")
       // .attr("transform", function(d, i) { return "rotate(" + (10) + ")"; })
       // .attr("translate", 80)
@@ -506,7 +564,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("id", "wavy") //Unique id of the path
         .attr("d", `M ${width / 2 + 162}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -320,0 a 75,75 1 1,1 320,1`)
         .style("fill", "none")
-        .style("stroke", "#C5FD89 ")
+        // .style("stroke", "#C5FD89 ")
         .style('stroke-width', 30)
         .style('opacity', 0.9)
 
@@ -529,23 +587,30 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("id", "wavy1") //Unique id of the path
         .attr("d", `M ${width / 2 + 232}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -464,0 a 75,75 1 1,1 464,1`)
         .style("fill", "none")
-        .style("stroke", "lightblue")
-        .style('stroke-width', 44)
-        .style('opacity', 0.2)
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 40)
+        .style('opacity', 0.7)
 
         .on('mouseover', function (d, i) {
           console.log("wavy1")
           d3.select(this)
-            .style('opacity', 0.3)
+            .style('opacity', 0.8)
         })
         .on('mouseout', function (d, i) {
           d3.select(this)
-            .style('opacity', 0.2)
+            .style('opacity', 0.7)
+            .style("stroke", "#D8D8D8")
+            .style('stroke-width', 40)
+
         })
         .on('click', function (d, i) {
 
           d3.select(this)
-            .style('opacity', 0.4)
+
+            .style("stroke", "#fab025")
+            .style('stroke-width', 40)
+            .style('opacity', 0.3)
+
 
 
           d3.select('#womenInfo')
@@ -561,29 +626,38 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("id", "wavy2") //Unique id of the path
         .attr("d", `M ${width / 2 + 274}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -550,0 a 75,75 1 1,1 550,1`)
         .style("fill", "none")
-        .style("stroke", "#9AF45E")
-        .style('stroke-width', 43)
-        .style('opacity', 0.1)
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 40)
+        .style('opacity', 0.5)
 
         .on('mouseover', function (d, i) {
           console.log("wavy2")
           d3.select(this)
 
-            .style('opacity', '0.3')
+            .style('opacity', '0.6')
         })
         .on('mouseout', function (d, i) {
           d3.select(this)
+            .style("stroke", "#D8D8D8")
+            .style('stroke-width', 40)
+            .style('opacity', 0.5)
 
-            .style('opacity', '0.1')
+
+
         })
         .on('click', function (d, i) {
 
           d3.select(this)
-            .style('opacity', 0.4)
+            .style("stroke", "#fab025")
+            .style('stroke-width', 40)
+            .style('opacity', 0.3)
+
+
+
           d3.select('#womenInfo')
             .selectAll('text')
             .style('opacity', (d) => (d.YEAR_B <= 1965 && d.YEAR_D > 1965) || (d.YEAR_B < 1990 && d.YEAR_D >= 1990) || (d.YEAR_B1 <= 1965 && d.YEAR_D1 > 1965) || (d.YEAR_B1 < 1990 && d.YEAR_D1 >= 1990) ? 1 : 0.1)
-           
+
 
         })
 
@@ -593,23 +667,32 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("id", "wavy3") //Unique id of the path
         .attr("d", `M ${width / 2 + 318}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -638,0 a 75,75 1 1,1 638,1`)
         .style("fill", "none")
-        .style("stroke", "#FF7B48 ")
-        .style('stroke-width', 43)
-        .style('opacity', 0.1)
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 40)
+        .style('opacity', 0.3)
+
+
         .on('mouseover', function (d, i) {
           console.log("wavy3")
           d3.select(this)
-            .style('opacity', 0.3)
+            .style('opacity', 0.4)
         })
         .on('mouseout', function (d, i) {
 
           d3.select(this)
-            .style('opacity', 0.1)
+          .style("stroke", "#D8D8D8")
+          .style('stroke-width', 40)
+          .style('opacity', 0.3)
+  
         })
         .on('click', function (d, i) {
 
           d3.select(this)
-            .style('opacity', 0.4)
+            .style("stroke", "#fab025")
+            .style('stroke-width', 40)
+            .style('opacity', 0.3)
+
+
           d3.select('#womenInfo')
             .selectAll('text')
             .style('opacity', (d) => (d.YEAR_B <= 1990 && d.YEAR_D > 1990) || (d.YEAR_B < 2015 && d.YEAR_D >= 2015) || (d.YEAR_B1 <= 1990 && d.YEAR_D1 > 1990) || (d.YEAR_B1 < 2015 && d.YEAR_D1 >= 2015) ? 1 : 0.1)
@@ -622,30 +705,43 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr("id", "wavy4") //Unique id of the path
         .attr("d", `M ${width / 2 + 363}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -726,0 a 75,75 1 1,1 726,1`)
         .style("fill", "none")
-        .style("stroke", "#FCFE4F")
-        .style('stroke-width', 43)
-        .style('opacity', 0.2)
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 40)
+        .style('opacity', 0.1)
+
 
 
         .on('mouseover', function (d, i) {
           console.log("wavy4")
           d3.select(this)
-            .style('opacity', 0.4)
+            .style('opacity', 0.2)
         })
         .on('mouseout', function (d, i) {
 
           d3.select(this)
-            .style('opacity', 0.2)
+          .style("stroke", "#D8D8D8")
+          .style('stroke-width', 40)
+          .style('opacity', 0.1)
+  
         })
 
         .on('click', function (d, i) {
 
           d3.select(this)
-            .style('opacity', 0.4)
+            .style("stroke", "#fab025")
+            .style('stroke-width', 40)
+            .style('opacity', 0.3)
+
+
+          d3.select('#text_build')
+          .selectAll('text')
+          .style('font-size','50px')
+          .attr('fill','green')
+
           d3.select('#womenInfo')
             .selectAll('text')
             .style('opacity', (d) => (d.YEAR_B <= 2015 && d.YEAR_D > 2015) || (d.YEAR_B < 2040 && d.YEAR_D >= 2040) || (d.YEAR_B1 <= 2015 && d.YEAR_D1 > 2015) || (d.YEAR_B1 < 2040 && d.YEAR_D1 >= 2040) ? 1 : 0.1)
-          
+
 
         })
 
@@ -664,7 +760,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "80%")
         .style('font-weight', '800')
-        .style('font-family', 'inter')
+        .attr('font-family', 'Inter')
         .text(["Decision Making"])
         .style('font-size', '18px')
 
@@ -676,7 +772,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "60%")
         .style('font-weight', '800')
-        .style('font-family', 'inter')
+        .attr('font-family', 'Inter')
         .text(["Design"])
         .style('font-size', '18px')
 
@@ -685,8 +781,8 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .append("textPath") //append a textPath to the text element
         .attr("xlink:href", "#wavy") //place the ID of the path here
         .style("text-anchor", "middle") //place the text halfway on the arc
-        .attr("startOffset", "40%")
-        .style('font-family', 'inter')
+        .attr("startOffset", "47%")
+        .attr('font-family', 'Inter')
         .style('font-weight', '800')
         .text(["Users"])
         .style('font-size', '18px')
@@ -695,8 +791,8 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .append("textPath") //append a textPath to the text element
         .attr("xlink:href", "#wavy") //place the ID of the path here
         .style("text-anchor", "middle") //place the text halfway on the arc
-        .attr("startOffset", "13%")
-        .style('font-family', 'inter')
+        .attr("startOffset", "20%")
+        .attr('font-family', 'Inter')
         .style('font-weight', '800')
         .text(["Knowledge Transfer"])
         .style('font-size', '18px')
@@ -756,7 +852,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
             .attr("y", 0)
             .text((d) => `${d.NAME} `)
             .style("font-size", "20px")
-            .style('font-family', 'inter')
+            .attr('font-family', 'Inter')
             .style('fill', (d) => d.COLOR || 'black')
             .style('opacity', 1)
 
@@ -782,9 +878,9 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
                 : y(2045)
             })
             .attr("y", 25)
-            .text((d) => `${d.SURNAME}.`)
+            .text((d) => `${d.SURNAME}`)
             .style("font-size", "20px")
-            .style('font-family', 'inter')
+            .attr('font-family', 'Inter')
 
             .style('fill', (d) => d.COLOR || 'black')
             .style('opacity', 1)
@@ -807,7 +903,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
           // LINES
           el.append("line")
             .attr("x1", 120)
-            .attr("x2", y(myDomain[1]) + 100)
+            .attr("x2", y(2040))
             .attr("y1", 0)
             .attr("y2", 0)
             .style("stroke", "black")
@@ -865,14 +961,14 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
           .attr("y", 155)
           .text(locale[languageSelector].legend.yearOfBirth)
           .style("font-size", "12px")
-          .style('font-family', 'inter')
+          .attr('font-family', 'Inter')
         legend
           .append("text")
           .attr("x", outerRadius + 20)
           .attr("y", 135)
           .text(locale[languageSelector].legend.name)
           .style("opacity", 0.5)
-          .style('font-family', 'inter')
+          .attr('font-family', 'Inter')
           .style("font-size", "16px");
         legend
           .append("text")
@@ -885,7 +981,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
           .attr("x", outerRadius - 70)
           .attr("y", 90)
           .text(locale[languageSelector].legend.exampleWork.b)
-          .style('font-family', 'inter')
+          .attr('font-family', 'Inter')
           .style("font-size", "12px");
       }
     }
@@ -1115,7 +1211,7 @@ function _chart(d3, height, width, margin, data, y, axisBottom, x, myDomain, col
       .attr("fill", "black")
       .style("text-anchor", "end")
       .style("dominant-baseline", "middle")
-      .style('font-family', 'inter')
+      .attr('font-family', 'Inter')
       .style('font-size', '1.5rem');
 
     el.append('circle')
