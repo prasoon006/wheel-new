@@ -119,8 +119,8 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .style("background-size", "cover")
         .style("background-position", "center center")
         .style("position", "absolute")
-        .style("top", `${margin.top + height / 1.97 - imgWidth / 2}px`)
-        .style("left", `${width / 2 - imgWidth / 2.2}px`)
+        .style("top", `${margin.top + height / 2 - imgWidth / 2}px`)
+        .style("left", `${width / 2 - imgWidth / 2}px`)
         .append("p")
         .attr("class", "workInfoExtra")
         .text("");
