@@ -9,17 +9,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;900&display=swap" rel="stylesheet">
 
 <body>
-    
-    <div  id="observablehq-chart2-278dcec7"></div>
-   
-    <script type="module">
-    import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+
+
+  <div class='upper-class' style="width:400px; background-color:blueviolet;">
+    <div id="observablehq-chart2-278dcec7"></div>
+  </div>
+
+  <script type="module">
+    import { Runtime, Inspector, Library } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
     import define from "./index.js";
-  
-    new Runtime().module(define, name => {
+
+
+    const runtime = new Runtime(Object.assign(new Library, {
+      // width: 450
+    }));
+
+    const main = runtime.module(define, name => {
       if (name === "chart2") return new Inspector(document.querySelector("#observablehq-chart2-278dcec7"));
     });
-    
-    </script>
-   
+
+    // main.redefine("height", 900)
+
+
+
+
+
+
+
+
+  </script>
+
 </body>

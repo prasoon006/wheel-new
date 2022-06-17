@@ -2,6 +2,7 @@ import define1 from "./a2e58f97fd5e8d7c@736.js";
 
 
 
+
 function _1(md) {
   return (
     md`# 
@@ -31,7 +32,7 @@ function _3(languageSelector, md) {
 function* _chart2(html, styles, drawRadialChart) {
   yield html`
     ${styles}
-    <div id="radialChart">      
+    <div id="radialChart" style="position: relative; width: 50vw; height: 50vh;">      
     </div>`;
   drawRadialChart();
 }
@@ -56,6 +57,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
       const height = heightRadial;
       const x = xRadial;
       const y = yRadial;
+     
 
       const svg = d3
         .select("#radialChart")
@@ -305,6 +307,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
           d.wikipedia != "" && d.wikipedia != "x" ? "pointer" : "auto"
         )
         .on("mouseover", onMouseOver)
+        .raise()
         .on("mouseout", onMouseOut);
 
       ///////
@@ -363,7 +366,9 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
         .style("stroke", 'black')
         .style("stroke-dasharray", "3")
-        .style("pointer-events", "none");
+        .style("pointer-events", "none")
+        .style("opacity",1)
+        .raise();
 
 
 
@@ -585,11 +590,12 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
       svg.append("path")
         .attr("id", "wavy1") //Unique id of the path
-        .attr("d", `M ${width / 2 + 232}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -464,0 a 75,75 1 1,1 464,1`)
+        .attr("d", `M ${width / 2 + 230}, ${height / 2 + 159.5} m 0, 0 a -75,-75 1 1,1 -460,0 a 75,75 1 1,1 460,1`)
         .style("fill", "none")
         .style("stroke", "#D8D8D8")
-        .style('stroke-width', 40)
+        .style('stroke-width', 42)
         .style('opacity', 0.7)
+        
 
         .on('mouseover', function (d, i) {
           console.log("wavy1")
@@ -600,7 +606,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
           d3.select(this)
             .style('opacity', 0.7)
             .style("stroke", "#D8D8D8")
-            .style('stroke-width', 40)
+            .style('stroke-width', 42)
 
         })
         .on('click', function (d, i) {
@@ -608,7 +614,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
           d3.select(this)
 
             .style("stroke", "#fab025")
-            .style('stroke-width', 40)
+            .style('stroke-width', 42)
             .style('opacity', 0.3)
 
 
@@ -624,10 +630,10 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
       svg.append("path")
         .attr("id", "wavy2") //Unique id of the path
-        .attr("d", `M ${width / 2 + 274}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -550,0 a 75,75 1 1,1 550,1`)
+        .attr("d", `M ${width / 2 + 274}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -548,0 a 75,75 1 1,1 548,1`)
         .style("fill", "none")
         .style("stroke", "#D8D8D8")
-        .style('stroke-width', 40)
+        .style('stroke-width', 41)
         .style('opacity', 0.5)
 
         .on('mouseover', function (d, i) {
@@ -639,7 +645,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .on('mouseout', function (d, i) {
           d3.select(this)
             .style("stroke", "#D8D8D8")
-            .style('stroke-width', 40)
+            .style('stroke-width', 41)
             .style('opacity', 0.5)
 
 
@@ -649,7 +655,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
           d3.select(this)
             .style("stroke", "#fab025")
-            .style('stroke-width', 40)
+            .style('stroke-width', 41)
             .style('opacity', 0.3)
 
 
@@ -665,10 +671,10 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
       svg.append("path")
         .attr("id", "wavy3") //Unique id of the path
-        .attr("d", `M ${width / 2 + 318}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -638,0 a 75,75 1 1,1 638,1`)
+        .attr("d", `M ${width / 2 + 318}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -636,0 a 75,75 1 1,1 636,1`)
         .style("fill", "none")
         .style("stroke", "#D8D8D8")
-        .style('stroke-width', 40)
+        .style('stroke-width', 41)
         .style('opacity', 0.3)
 
 
@@ -681,7 +687,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
           d3.select(this)
           .style("stroke", "#D8D8D8")
-          .style('stroke-width', 40)
+          .style('stroke-width', 41)
           .style('opacity', 0.3)
   
         })
@@ -689,7 +695,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
           d3.select(this)
             .style("stroke", "#fab025")
-            .style('stroke-width', 40)
+            .style('stroke-width', 41)
             .style('opacity', 0.3)
 
 
@@ -703,11 +709,12 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
       svg.append("path")
         .attr("id", "wavy4") //Unique id of the path
-        .attr("d", `M ${width / 2 + 363}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -726,0 a 75,75 1 1,1 726,1`)
+        .attr("d", `M ${width / 2 + 363}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -724,0 a 75,75 1 1,1 724,1`)
         .style("fill", "none")
         .style("stroke", "#D8D8D8")
-        .style('stroke-width', 40)
+        .style('stroke-width', 41)
         .style('opacity', 0.1)
+        
 
 
 
@@ -720,7 +727,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
           d3.select(this)
           .style("stroke", "#D8D8D8")
-          .style('stroke-width', 40)
+          .style('stroke-width', 41)
           .style('opacity', 0.1)
   
         })
@@ -729,7 +736,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
           d3.select(this)
             .style("stroke", "#fab025")
-            .style('stroke-width', 40)
+            .style('stroke-width', 41)
             .style('opacity', 0.3)
 
 
@@ -1000,7 +1007,7 @@ function _onMouseOver(d3, extractWorkNAME) {
     function onMouseOver(event, d, i) {
       const myImgProfile = d.imgProfile;
       const myId = d.id;
-      //console.log(myImgProfile);
+      console.log(myImgProfile);
 
       d3.select('#barsGroup')
         .selectAll(`path:not(path[data-id=${myId}])`)
@@ -1155,6 +1162,9 @@ function _20(md) {
 
 function _chart(d3, height, width, margin, data, y, axisBottom, x, myDomain, colorMain, parseHtmlToText, extractWorkYear) {
   //const svg = d3.select(DOM.svg(width, height));
+
+  width=500
+  height=500
   const svg = d3
     .create('svg')
     .attr('height', height)
@@ -1795,5 +1805,6 @@ export default function define(runtime, observer) {
   main.import("Text", child1);
   main.import("Table", child1);
   main.import("Search", child1);
+
   return main;
 }

@@ -1,0 +1,111 @@
+body{
+  
+    margin: 0px;
+    font-family: 'Inter';
+}
+
+.navbar-l{
+    border-bottom: 1px black solid;
+    position: fixed;
+    width: 100%;
+  
+    padding: 15px;
+    height: 28px;
+    background-color: white;
+}
+
+.menu-contain{
+    display: flex;
+    float: right;
+}
+
+.dhb-icon{
+    font-size: 20px;
+    margin-left: 25px;
+}
+
+.menu-l{
+  padding-left: 35px;
+  padding-right: 35px;
+  color: gray;
+  font-weight:400;
+  padding-top: 5px;
+  font-size: 19px; 
+}
+
+
+.main-contain{
+    display: flex;
+    width: 100%;
+    /* background-color: yellow; */
+    height: 99vh;
+    /* C1E8C3 */
+}
+
+.left-contain{
+    width: 40%;
+}
+
+.right-contain{
+    /* background-color: aqua; */
+    width: 60%;
+}
+
+
+.build-capacity{
+    background-color: #377B65;
+}
+
+.back-tools{
+    padding: 30px;
+    color: white;
+    font-size: 13px;
+}
+
+
+.build-text{
+    color: white;
+    font-size: 21px;
+    padding-top: 20px;
+    padding-left: 23px;
+    font-weight: bold;
+}
+
+.scnd-contain{
+    display: flex;
+    margin-left: 5px;
+    margin-top: 5px;
+    justify-content: space-between
+}
+
+.rgn-int-box{
+    background-color: #C1E8C3;
+    width: 100%;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+
+.scnd-left{
+    width: 38%;
+    height: 300px;
+    margin: 0;
+    background-color: aqua;
+  
+}
+
+.scnd-right{
+    height: 300px;
+    margin: 0;
+    width: 60%;
+    background-color: #F3F5F5;
+}
+
+.third-con{
+    margin-left: 5px;
+    margin-top: 5px;
+
+    height: 130px;
+    background-color: #F3F5F5;
+}
