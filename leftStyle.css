@@ -2,10 +2,11 @@ body{
   
     margin: 0px;
     font-family: 'Inter';
+    overflow: hidden;
 }
 
 .navbar-l{
-    border-bottom: 1px black solid;
+    /* border-bottom: 1px black solid; */
     position: fixed;
     width: 100%;
   
@@ -106,12 +107,25 @@ body{
     margin-left: 5px;
     margin-top: 5px;
 
-    height: 130px;
+    height: 150px;
     background-color: #F3F5F5;
 }
 
 
 .right-contain{
-    zoom: 0.55;
+    transform: scale(0.55);
+    position: absolute;
+    left: 28%;
+    top: -5%;
+    /* z-index: -1; */
 
+}
+
+
+.fourth-con{
+    margin-left: 5px;
+    margin-top: 5px;
+
+    height: 150px;
+    background-color: #F3F5F5;
 }

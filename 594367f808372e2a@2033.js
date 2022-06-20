@@ -162,122 +162,195 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .style("text-anchor", "middle")
         .style("fill", colorMain);
 
-      // SVG CHART
+    
+
+     
+
+
+        svg.append("path")
+        .attr("id", "wavy11") //Unique id of the path
+        .attr("d", `M ${width / 2 + 230}, ${height / 2 + 159.5} m 0, 0 a -75,-75 1 1,1 -460,0 a 75,75 1 1,1 460,1`)
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 42)
+        .style('opacity', 0.7)
+       
+        
+
+        .on('mouseover', function (d, i) {
+          console.log("wavy11")
+          d3.select(this)
+            .style('opacity', 0.8)
+        })
+        .on('mouseout', function (d, i) {
+          d3.select(this)
+            .style('opacity', 0.7)
+            .style("stroke", "#D8D8D8")
+            .style('stroke-width', 42)
+
+        })
+        .on('click', function (d, i) {
+
+          d3.select(this)
+
+            .style("stroke", "#fab025")
+            .style('stroke-width', 42)
+            .style('opacity', 0.3)
+
+
+
+          d3.select('#womenInfo')
+            .selectAll('text')
+            .style('opacity', (d) => ((d.YEAR_B <= 1940 && d.YEAR_D > 1940) || (d.YEAR_B < 1965 && d.YEAR_D >= 1965) || ((d.YEAR_B1 <= 1940 && d.YEAR_D1 > 1940) || (d.YEAR_B1 < 1965 && d.YEAR_D1 >= 1965))) ? 1 : 0.1)
+
+
+        })
+
+        svg.append("path")
+        .attr("id", "wavy22") //Unique id of the path
+        .attr("d", `M ${width / 2 + 274}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -548,0 a 75,75 1 1,1 548,1`)
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.5)
+
+        .on('mouseover', function (d, i) {
+        
+          d3.select(this)
+
+            .style('opacity', '0.6')
+        })
+        .on('mouseout', function (d, i) {
+          d3.select(this)
+            .style("stroke", "#D8D8D8")
+            .style('stroke-width', 41)
+            .style('opacity', 0.5)
+
+
+
+        })
+        .on('click', function (d, i) {
+
+          d3.select(this)
+            .style("stroke", "#fab025")
+            .style('stroke-width', 41)
+            .style('opacity', 0.3)
+
+
+
+          d3.select('#womenInfo')
+            .selectAll('text')
+            .style('opacity', (d) => (d.YEAR_B <= 1965 && d.YEAR_D > 1965) || (d.YEAR_B < 1990 && d.YEAR_D >= 1990) || (d.YEAR_B1 <= 1965 && d.YEAR_D1 > 1965) || (d.YEAR_B1 < 1990 && d.YEAR_D1 >= 1990) ? 1 : 0.1)
+
+
+        })
+
+
+
+      svg.append("path")
+        .attr("id", "wavy33") //Unique id of the path
+        .attr("d", `M ${width / 2 + 318}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -636,0 a 75,75 1 1,1 636,1`)
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.3)
+
+
+        .on('mouseover', function (d, i) {
+         
+          d3.select(this)
+            .style('opacity', 0.4)
+        })
+        .on('mouseout', function (d, i) {
+
+          d3.select(this)
+          .style("stroke", "#D8D8D8")
+          .style('stroke-width', 41)
+          .style('opacity', 0.3)
+  
+        })
+        .on('click', function (d, i) {
+
+          d3.select(this)
+            .style("stroke", "#fab025")
+            .style('stroke-width', 41)
+            .style('opacity', 0.3)
+
+
+          d3.select('#womenInfo')
+            .selectAll('text')
+            .style('opacity', (d) => (d.YEAR_B <= 1990 && d.YEAR_D > 1990) || (d.YEAR_B < 2015 && d.YEAR_D >= 2015) || (d.YEAR_B1 <= 1990 && d.YEAR_D1 > 1990) || (d.YEAR_B1 < 2015 && d.YEAR_D1 >= 2015) ? 1 : 0.1)
+
+
+        })
+
+
+      svg.append("path")
+        .attr("id", "wavy44") //Unique id of the path
+        .attr("d", `M ${width / 2 + 363}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -724,0 a 75,75 1 1,1 724,1`)
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.1)
+        
+
+
+
+        .on('mouseover', function (d, i) {
+         
+          d3.select(this)
+            .style('opacity', 0.2)
+        })
+        .on('mouseout', function (d, i) {
+
+          d3.select(this)
+          .style("stroke", "#D8D8D8")
+          .style('stroke-width', 41)
+          .style('opacity', 0.1)
+  
+        })
+
+        .on('click', function (d, i) {
+
+          d3.select(this)
+            .style("stroke", "#fab025")
+            .style('stroke-width', 41)
+            .style('opacity', 0.3)
+
+
+          d3.select('#text_build')
+          .selectAll('text')
+          .style('font-size','50px')
+          .attr('fill','green')
+
+          d3.select('#womenInfo')
+            .selectAll('text')
+            .style('opacity', (d) => (d.YEAR_B <= 2015 && d.YEAR_D > 2015) || (d.YEAR_B < 2040 && d.YEAR_D >= 2040) || (d.YEAR_B1 <= 2015 && d.YEAR_D1 > 2015) || (d.YEAR_B1 < 2040 && d.YEAR_D1 >= 2040) ? 1 : 0.1)
+
+
+        })
+
+          // SVG CHART
       const chartElGroup = svg
-        .append("g")
-        .attr("id", "chartElGroup")
-        .attr("transform", `translate(0,${margin.top})`);
+      .append("g")
+      .attr("id", "chartElGroup")
+      .attr("transform", `translate(0,${margin.top})`);
 
-      // RADIAL BARS
-      const barsGroup = chartElGroup
-        .append("g")
-        .attr("id", "barsGroup")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-
-      const rectBar = chartElGroup
-        .append("g")
-        .attr("id", "barsGroup")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+    // RADIAL BARS
+    const barsGroup = chartElGroup
+      .append("g")
+      .attr("id", "barsGroup")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 
-
-      const rectBar1 = chartElGroup
-        .append("g")
-        .attr("id", "barsGroup")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
-
-
-
-
-      rectBar
-        .selectAll("path")
-        .style('z-index', 3)
-        .data(data)
-        .enter()
-        .append("path")
-        .attr("data-id", (d) => d.id)
-        .attr("fill", (d => `${d["COLOR"]}` || colorMain))
-        .attr(
-          "d",
-          d3
-            .arc()
-            .innerRadius((d) => y(+d["YEAR_B"]))
-            .outerRadius((d) => y(+d["YEAR_D"] || 2021))
-            .startAngle((d) => x(d.id) + 0.11)
-            .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
-            .padAngle(-0.4)
-            .padRadius(outerRadius)
-        )
-
-        .attr("opacity", 1)
-        .transition()
-        .duration(500)
-        // .delay((d, i) => i * 15)
-        .attr("opacity", 1)
-        .style("pointer-events", "none");
-
-
-
-      rectBar1
-        .selectAll("path")
-        .style('z-index', 3)
-        .data(data)
-        .enter()
-        .append("path")
-        .attr("data-id", (d) => d.id)
-        .attr("fill", (d => `${d["COLOR"]}` || colorMain))
-        .attr(
-          "d",
-          d3
-            .arc()
-            .innerRadius((d) => y(+d["YEAR_B1"]))
-            .outerRadius((d) => y(+d["YEAR_D1"]))
-            .startAngle((d) => x(d.id) + 0.11)
-            .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
-            .padAngle(-0.4)
-            .padRadius(outerRadius)
-        )
-
-        .attr("opacity", 1)
-        .transition()
-        .duration(500)
-        // .delay((d, i) => i * 15)
-        .attr("opacity", 1)
-        .style("pointer-events", "none");
-
-      barsGroup
-        .selectAll("path")
-        .data(data)
-        .enter()
-        .append("path")
-        .attr("data-id", (d) => d.id)
-        .attr("fill", (d => `${d["COLOR"]}` || colorMain))
-        .attr(
-          "d",
-          d3
-            .arc()
-            .innerRadius((d) => y(+1940))
-            .outerRadius((d) => y(+2040))
-            .startAngle((d) => x(d.id))
-            .endAngle((d) => x(d.id) + x.bandwidth())
-            .padAngle(0.5)
-            .padRadius(innerRadius)
-        )
-        .attr("opacity", 0)
-        .transition()
-        .duration(5)
-        .delay((d, i) => i * 15)
-        .attr("opacity", 0)
-        .style("pointer-events", "none");
-
-      ///////////
+       ///////////
 
       // NEW!! Aux elements for interaction
       const barsAux = chartElGroup
         .append("g")
         .attr("id", "barsAux")
-        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+        
 
       barsAux
         .selectAll("a")
@@ -309,6 +382,110 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .on("mouseover", onMouseOver)
         .raise()
         .on("mouseout", onMouseOut);
+
+
+
+   
+
+
+
+
+
+    barsGroup
+      .selectAll("path")
+      .data(data)
+      .enter()
+      .append("path")
+      .attr("data-id", (d) => d.id)
+      .attr("fill", (d => `${d["COLOR"]}` || colorMain))
+      .attr(
+        "d",
+        d3
+          .arc()
+          .innerRadius((d) => y(+1940))
+          .outerRadius((d) => y(+2040))
+          .startAngle((d) => x(d.id))
+          .endAngle((d) => x(d.id) + x.bandwidth())
+          .padAngle(0.5)
+          .padRadius(innerRadius)
+      )
+      .attr("opacity", 0)
+      .transition()
+      .duration(5)
+      .delay((d, i) => i * 15)
+      .attr("opacity", 0)
+      .style("pointer-events", "none");
+
+
+        const rectBar = chartElGroup
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+
+
+
+      const rectBar1 = chartElGroup
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+
+        
+      rectBar
+      .selectAll("path")
+      .style('z-index', 3)
+      .data(data)
+      .enter()
+      .append("path")
+      .attr("data-id", (d) => d.id)
+      .attr("fill", (d => `${d["COLOR"]}` || colorMain))
+      .attr(
+        "d",
+        d3
+          .arc()
+          .innerRadius((d) => y(+d["YEAR_B"]))
+          .outerRadius((d) => y(+d["YEAR_D"] || 2021))
+          .startAngle((d) => x(d.id) + 0.11)
+          .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
+          .padAngle(-0.4)
+          .padRadius(outerRadius)
+      )
+
+      .attr("opacity", 1)
+      .transition()
+      .duration(500)
+      // .delay((d, i) => i * 15)
+      .attr("opacity", 1)
+      .style("pointer-events", "none");
+
+
+
+    rectBar1
+      .selectAll("path")
+      .style('z-index', 3)
+      .data(data)
+      .enter()
+      .append("path")
+      .attr("data-id", (d) => d.id)
+      .attr("fill", (d => `${d["COLOR"]}` || colorMain))
+      .attr(
+        "d",
+        d3
+          .arc()
+          .innerRadius((d) => y(+d["YEAR_B1"]))
+          .outerRadius((d) => y(+d["YEAR_D1"]))
+          .startAngle((d) => x(d.id) + 0.11)
+          .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
+          .padAngle(-0.4)
+          .padRadius(outerRadius)
+      )
+
+      .attr("opacity", 1)
+      .transition()
+      .duration(500)
+      // .delay((d, i) => i * 15)
+      .attr("opacity", 1)
+     
+      .style("pointer-events", "none");
 
       ///////
 
@@ -505,7 +682,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .selectAll("text")
         .data(["BUILDING LIFECYCLE"])
         .join("text")
-        .attr("x", (d, i) => width / 2 + 430)
+        .attr("x", (d, i) => width / 2 + 410)
         .attr("y", (d) => height / 2)
         .text((d) => d)
 
@@ -588,22 +765,24 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
 
 
-      svg.append("path")
+        svg.append("path")
         .attr("id", "wavy1") //Unique id of the path
         .attr("d", `M ${width / 2 + 230}, ${height / 2 + 159.5} m 0, 0 a -75,-75 1 1,1 -460,0 a 75,75 1 1,1 460,1`)
         .style("fill", "none")
         .style("stroke", "#D8D8D8")
         .style('stroke-width', 42)
-        .style('opacity', 0.7)
+        .style('opacity', 0.0)
+        
+       
         
 
         .on('mouseover', function (d, i) {
           console.log("wavy1")
-          d3.select(this)
+          d3.select("#wavy11")
             .style('opacity', 0.8)
         })
         .on('mouseout', function (d, i) {
-          d3.select(this)
+          d3.select("#wavy11")
             .style('opacity', 0.7)
             .style("stroke", "#D8D8D8")
             .style('stroke-width', 42)
@@ -611,7 +790,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         })
         .on('click', function (d, i) {
 
-          d3.select(this)
+          d3.select("#wavy11")
 
             .style("stroke", "#fab025")
             .style('stroke-width', 42)
@@ -626,6 +805,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
         })
 
+     
 
 
       svg.append("path")
@@ -634,16 +814,16 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .style("fill", "none")
         .style("stroke", "#D8D8D8")
         .style('stroke-width', 41)
-        .style('opacity', 0.5)
+        .style('opacity', 0)
 
         .on('mouseover', function (d, i) {
           console.log("wavy2")
-          d3.select(this)
+          d3.select("#wavy22")
 
             .style('opacity', '0.6')
         })
         .on('mouseout', function (d, i) {
-          d3.select(this)
+          d3.select("#wavy22")
             .style("stroke", "#D8D8D8")
             .style('stroke-width', 41)
             .style('opacity', 0.5)
@@ -653,7 +833,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         })
         .on('click', function (d, i) {
 
-          d3.select(this)
+          d3.select("#wavy22")
             .style("stroke", "#fab025")
             .style('stroke-width', 41)
             .style('opacity', 0.3)
@@ -675,17 +855,17 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .style("fill", "none")
         .style("stroke", "#D8D8D8")
         .style('stroke-width', 41)
-        .style('opacity', 0.3)
+        .style('opacity', 0)
 
 
         .on('mouseover', function (d, i) {
           console.log("wavy3")
-          d3.select(this)
+          d3.select("#wavy33")
             .style('opacity', 0.4)
         })
         .on('mouseout', function (d, i) {
 
-          d3.select(this)
+          d3.select("#wavy33")
           .style("stroke", "#D8D8D8")
           .style('stroke-width', 41)
           .style('opacity', 0.3)
@@ -693,7 +873,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         })
         .on('click', function (d, i) {
 
-          d3.select(this)
+          d3.select("#wavy33")
             .style("stroke", "#fab025")
             .style('stroke-width', 41)
             .style('opacity', 0.3)
@@ -713,19 +893,19 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .style("fill", "none")
         .style("stroke", "#D8D8D8")
         .style('stroke-width', 41)
-        .style('opacity', 0.1)
+        .style('opacity', 0)
         
 
 
 
         .on('mouseover', function (d, i) {
           console.log("wavy4")
-          d3.select(this)
+          d3.select("#wavy44")
             .style('opacity', 0.2)
         })
         .on('mouseout', function (d, i) {
 
-          d3.select(this)
+          d3.select("#wavy44")
           .style("stroke", "#D8D8D8")
           .style('stroke-width', 41)
           .style('opacity', 0.1)
@@ -734,7 +914,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
         .on('click', function (d, i) {
 
-          d3.select(this)
+          d3.select("#wavy44")
             .style("stroke", "#fab025")
             .style('stroke-width', 41)
             .style('opacity', 0.3)
