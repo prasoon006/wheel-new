@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>Left Panel</title>
+
+<head>
+  <script></script>
+  <script ></script>
+
+
+  <script src="http://d3js.org/d3.v7.min.js"  src="http://d3js.org/topojson.v0.min.js" type="text/javascript">
+    d3.json('./files/maps.geojson').then(function (bb) {
+      let width = 200, height = 200;
+      let projection = d3.geoEqualEarth();
+      projection.fitSize([width, height], bb);
+      let geoGenerator = d3.geoPath()
+        .projection(projection);
+
+      let svg = d3.select("#map").append('svg')
+        .style("width", width).style("height", height);
+
+      svg.append('g').selectAll('path')
+        .data(bb.features)
+        .join('path')
+        .attr('d', geoGenerator)
+        .attr('fill', '#088')
+        .attr('stroke', '#000');
+    });
+  </script>
+</head>
 <link rel="stylesheet" type="text/css" href="./leftStyle.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -11,10 +37,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 
 
+
+
+
+
 <!-- Navbar Start -->
 <div class="navbar-l">
   <span class="dhb-icon">
-    DataHomeBase
+    <!-- <div> -->
+    <img style="height: 5vh;" src="/files/dhblogo.png"></img>
+    <!-- </div> -->
   </span>
   <div class="menu-contain">
     <div class="menu-l">
@@ -35,7 +67,7 @@
   </div>
 </div>
 
-<div style="height:58px">
+<div style="height:7vh">
 
 </div>
 <!-- Navbar End -->
@@ -66,12 +98,16 @@
         <div class="rgn-int-box">
           Select a Region Of Interest
         </div>
+        <div id="map">
+
+        </div>
       </div>
+
       <div class="scnd-right">
         <div class="rgn-int-box">
           Housing Stakeholders - Designers
         </div>
-        <div style="font-size:11px;">
+        <div class="text-right">
           Through legislation and policy, regulators protect users, citizens, companies and employees against unfair and
           adverse impacts. Regulation
           and legislation is risk-based. Regulators apply measurements that influence the market but sustain a linear
@@ -80,7 +116,7 @@
         </div>
         <hr>
 
-        <div style="font-size:11px;">
+        <div class="text-right">
           Regulators and legislators implement measures
           that drive the built environment towards circularity.
           These measurements encourage innovation and
@@ -88,7 +124,7 @@
         </div>
         <hr>
 
-        <div style="font-size:11px;">
+        <div class="text-right">
           Regulators and legislators improve
           awareness about the circular built
           environment
@@ -110,7 +146,7 @@
 
     <div class="third-con">
       <div class="rgn-int-box">
-        Key Stakeholders in Rimouski
+        Key Stakeholders in Montreal
       </div>
     </div>
 

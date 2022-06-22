@@ -10,9 +10,10 @@ body{
     position: fixed;
     width: 100%;
   
-    padding: 15px;
-    height: 28px;
+    padding: 2vh;
+    height: 5vh;
     background-color: white;
+    z-index: 2;
 }
 
 .menu-contain{
@@ -21,7 +22,7 @@ body{
 }
 
 .dhb-icon{
-    font-size: 20px;
+   
     margin-left: 25px;
 }
 
@@ -30,8 +31,8 @@ body{
   padding-right: 35px;
   color: gray;
   font-weight:400;
-  padding-top: 5px;
-  font-size: 19px; 
+  padding-top: 0.7vh;
+  font-size: 2.2vh; 
 }
 
 
@@ -58,16 +59,16 @@ body{
 }
 
 .back-tools{
-    padding: 30px;
+    padding: 3vh;
     color: white;
-    font-size: 13px;
+    font-size: 1.5vh;
 }
 
 
 .build-text{
     color: white;
-    font-size: 21px;
-    padding-top: 20px;
+    font-size: 2.3vh;
+    padding-top: 2.2vh;
     padding-left: 23px;
     font-weight: bold;
 }
@@ -75,29 +76,35 @@ body{
 .scnd-contain{
     display: flex;
     margin-left: 5px;
-    margin-top: 5px;
+    margin-top: 0.6vh;
     justify-content: space-between
 }
 
 .rgn-int-box{
     background-color: #C1E8C3;
     width: 100%;
+    font-size: 1.9vh;
     margin-right: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 0.6vh;
+    padding-top: 0.6vh;
 
+}
+
+.text-right{
+    font-size: 1.35vh;
+    padding: 0.6vh;
 }
 
 .scnd-left{
     width: 38%;
-    height: 300px;
+    height: 42vh;
     margin: 0;
     background-color: aqua;
   
 }
 
 .scnd-right{
-    height: 300px;
+    height: 42vh;
     margin: 0;
     width: 60%;
     background-color: #F3F5F5;
@@ -105,18 +112,20 @@ body{
 
 .third-con{
     margin-left: 5px;
-    margin-top: 5px;
+    margin-top: 0.6vh;
 
-    height: 150px;
+    height: 18vh;
     background-color: #F3F5F5;
 }
 
 
 .right-contain{
-    transform: scale(0.55);
+    transform: scale(0.75);
     position: absolute;
-    left: 28%;
-    top: -5%;
+    left: 40%;
+    top: -15%;
+  
+    /* margin-top: -200px; */
     /* z-index: -1; */
 
 }
@@ -124,8 +133,8 @@ body{
 
 .fourth-con{
     margin-left: 5px;
-    margin-top: 5px;
+    margin-top: 0.6vh;
 
-    height: 150px;
+    height: 18vh;
     background-color: #F3F5F5;
 }
