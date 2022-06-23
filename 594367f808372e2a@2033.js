@@ -828,14 +828,16 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .data(['DESIGN'])
         .join("text")
         .attr('id', 'text_design')
-        .attr("x", (d, i) => width / 2 + 200)
+        .attr("x", (d, i) => width / 2 + 209)
         .attr("y", (d) => height / 2)
         .text((d) => d)
         .style("fill", "black")
+        .style('text-anchor', 'start')
+        // .attr('transform', 'rotate(89 830 490)')
         .style("opacity", 1)
         .style('font-weight', '600')
         .attr('font-family', 'Inter')
-        .style("font-size", "13px")
+        .style("font-size", "11px")
         .style("pointer-events", "all")
         .on('click', (d, i) => {
           console.log("Work done")
@@ -866,14 +868,14 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr('id', 'text_build')
         .data(['BUILD'])
         .join("text")
-        .attr("x", (d, i) => width / 2 + 254)
+        .attr("x", (d, i) => width / 2 + 256)
         .attr("y", (d) => height / 2)
         .text((d) => d)
         .style("fill", "black")
         .style("opacity", 1)
         .style('font-weight', '600')
         .attr('font-family', 'Inter')
-        .style("font-size", "13px")
+        .style("font-size", "11px")
 
         .style("pointer-events", "all");
 
@@ -888,14 +890,14 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr('id', 'text_use')
         .data(['USE'])
         .join("text")
-        .attr("x", (d, i) => width / 2 + 304)
+        .attr("x", (d, i) => width / 2 + 306)
         .attr("y", (d) => height / 2)
         .text((d) => d)
         .style("fill", "black")
         .style("opacity", 1)
         .style('font-weight', '600')
         .attr('font-family', 'Inter')
-        .style("font-size", "13px")
+        .style("font-size", "11px")
         .style("pointer-events", "none");
 
       constDates
@@ -903,14 +905,14 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .attr('id', 'text_endof')
         .data(['END OF'])
         .join("text")
-        .attr("x", (d, i) => width / 2 + 340)
+        .attr("x", (d, i) => width / 2 + 341)
         .attr("y", (d) => height / 2)
         .text((d) => d)
         .style('font-weight', '600')
         .style("fill", "black")
         .style("opacity", 0.9)
         .attr('font-family', 'Inter')
-        .style("font-size", "13px")
+        .style("font-size", "11px")
         .style("pointer-events", "none");
 
 
@@ -930,7 +932,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .style("opacity", 0.9)
         .style('font-weight', '600')
         .attr('font-family', 'Inter')
-        .style("font-size", "13px")
+        .style("font-size", "11px")
         .style("pointer-events", "none");
 
 
@@ -2539,7 +2541,7 @@ function _locale() {
           d: ""
         },
         centerText: {
-          a: "Participating in",
+          a: "Participation in",
           b: "the Building ",
           c: "Lifecycle"
         },

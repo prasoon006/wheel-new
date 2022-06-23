@@ -3,11 +3,16 @@
 <title>Left Panel</title>
 
 <head>
-  <script></script>
-  <script ></script>
+
+  <script>
+    function onScaleClick() {
+      console.log("scale clicked");
+    }
+
+  </script>
 
 
-  <script src="http://d3js.org/d3.v7.min.js"  src="http://d3js.org/topojson.v0.min.js" type="text/javascript">
+  <script src="http://d3js.org/d3.v7.min.js" src="http://d3js.org/topojson.v0.min.js" type="text/javascript">
     d3.json('./files/maps.geojson').then(function (bb) {
       let width = 200, height = 200;
       let projection = d3.geoEqualEarth();
@@ -45,7 +50,7 @@
 <div class="navbar-l">
   <span class="dhb-icon">
     <!-- <div> -->
-    <img style="height: 5vh;" src="wheel/files/dhblogo.png"></img>
+    <img style="height: 5vh;" src="/wheel/files/dhblogo.png"></img>
     <!-- </div> -->
   </span>
   <div class="menu-contain">
@@ -61,13 +66,13 @@
     <div class="menu-l">
       Policy
     </div>
-    <div class="menu-l">
+    <div style="font-weight: bold;" class="menu-l">
       Toolkit
     </div>
   </div>
 </div>
 
-<div style="height:7vh">
+<div style="height:12vh">
 
 </div>
 <!-- Navbar End -->
@@ -165,6 +170,42 @@
   <!-- FOR WHEEL -->
   <div class="right-contain">
 
+  </div>
+  <div onclick="onScaleClick()" class="scale-tr">
+    <div class="scale-lin">
+      <span class="sq-lin">
+
+      </span>
+
+      Linear
+    </div>
+    <hr class="lin-cir-line">
+    <div class="scale-cir">
+      <span class="sq-cir">
+      </span>
+      Circular
+    </div>
+  </div>
+
+
+  
+  <div class="fill-lin">
+
+  </div>
+
+  <div class="fill-cir">
+    <span class="cir-lin-1">
+
+    </span>
+    <span class="cir-lin-2">
+
+    </span>
+    <span class="cir-lin-3">
+
+    </span>
+    <span class="cir-lin-4">
+
+    </span>
   </div>
 </div>
 
