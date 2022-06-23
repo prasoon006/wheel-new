@@ -39,6 +39,16 @@ function* _chart2(html, styles, drawRadialChart) {
 
 
 
+function* _chart3(html, styles, drawRadialChart3) {
+  yield html`
+    ${styles}
+    <div id="radialChart3">      
+    </div>`;
+  drawRadialChart3();
+}
+
+
+
 
 
 function ring1Inner(val) {
@@ -1869,6 +1879,1736 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
 
 
+function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, locale, languageSelector, colorMain, data, innerRadius, outerRadius, onMouseOver, onMouseOut, myDomain, extractWorkYear) {
+  return (
+    async function drawRadialChart3() {
+      const height = heightRadial;
+      const x = xRadial;
+      const y = yRadial;
+
+
+      const svg = d3
+        .select("#radialChart3")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom);
+
+      // CHART TITLE
+      const titleChart = svg.append("g").attr("id", "titleChart");
+      const initPosit = 60;
+      const diffPosit = 40;
+      const fontSize = "40px";
+
+      titleChart
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", initPosit)
+        .text(locale[languageSelector].title.a)
+        .attr('font-family', 'Inter')
+        .style("font-size", fontSize)
+        .style("text-anchor", "middle");
+      titleChart
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", initPosit + diffPosit)
+        .text(locale[languageSelector].title.b)
+        .attr('font-family', 'Inter')
+        .style("font-weight", 800)
+        .style("font-size", fontSize)
+        .style("fill", colorMain)
+        .style("text-anchor", "middle");
+      titleChart
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", initPosit + diffPosit * 2)
+        .text(locale[languageSelector].title.c)
+        .attr('font-family', 'Inter')
+        .style("font-size", fontSize)
+        .style("text-anchor", "middle");
+      titleChart
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", initPosit + diffPosit * 3)
+        .text(locale[languageSelector].title.d)
+        .attr('font-family', 'Inter')
+        .style("font-size", fontSize)
+        .style("text-anchor", "middle");
+
+      // CENTRAL IMAGE // Image size
+      const imgWidth = 170;
+      const imgTest = d3
+        .select("#radialChart3")
+        .append("div")
+        .attr("id", "imgProfile")
+        .style("width", `${imgWidth}px`)
+        .style("height", `${imgWidth}px`)
+        // .style("filter", "grayscale(100%)")
+        .style("border-radius", "50%")
+        .style("background-size", "cover")
+        .style("background-position", "center center")
+        .style("position", "absolute")
+        .style("top", `${margin.top + height / 2 - imgWidth / 2}px`)
+        .style("left", `${width / 2 - imgWidth / 2}px`)
+        .append("p")
+        .attr("class", "workInfoExtra")
+        .text("");
+
+      // CENTRAL TEXT
+      // If empty image: some central text visible
+      const titleCenter = svg.append("g").attr("id", "centerText");
+      titleCenter
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", margin.top + height / 2 - 32)
+        .text(locale[languageSelector].centerText.a)
+        .attr('font-family', 'Inter')
+        .style("font-size", "19px")
+        .style("dominant-baseline", "hanging")
+        .style("text-anchor", "middle")
+        .style("fill", colorMain)
+        .attr('opacity', 0.7)
+      titleCenter
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", margin.top + height / 2)
+        .text(locale[languageSelector].centerText.b)
+        .attr('font-family', 'Inter')
+        .style("font-size", "19px")
+        // .style("font-weight", 800)
+        .style("dominant-baseline", "hanging")
+        .style("text-anchor", "middle")
+        .style("fill", colorMain)
+        .attr('opacity', 0.7)
+      titleCenter
+        .append("text")
+        .attr("x", width / 2)
+        .attr("y", margin.top + height / 2 + 30)
+        .text(locale[languageSelector].centerText.c)
+        .attr('font-family', 'Inter')
+        .style("font-size", "19px")
+        .style("dominant-baseline", "hanging")
+        .style("text-anchor", "middle")
+        .attr('opacity', 0.7)
+        .style("fill", colorMain);
+
+
+
+
+
+
+      svg.append("path")
+        .attr("id", "wavy11") //Unique id of the path
+        .attr("d", `M ${width / 2 + 230}, ${height / 2 + 159.5} m 0, 0 a -75,-75 1 1,1 -460,0 a 75,75 1 1,1 460,1`)
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 42)
+        .style('opacity', 0.7)
+
+
+
+        .on('mouseover', function (d, i) {
+          console.log("wavy11")
+          d3.select(this)
+            .style('opacity', 0.8)
+        })
+        .on('mouseout', function (d, i) {
+          d3.select(this)
+            .style('opacity', 0.7)
+            .style("stroke", "#D8D8D8")
+            .style('stroke-width', 42)
+
+        })
+        .on('click', function (d, i) {
+
+          d3.select(this)
+
+            .style("stroke", "#fab025")
+            .style('stroke-width', 42)
+            .style('opacity', 0.3)
+
+
+
+          d3.select('#womenInfo')
+            .selectAll('text')
+            .style('opacity', (d) => ((d.YEAR_BL <= 1940 && d.YEAR_DL > 1940) || (d.YEAR_BL < 1965 && d.YEAR_DL >= 1965) || ((d.YEAR_B1L <= 1940 && d.YEAR_D1L > 1940) || (d.YEAR_B1L < 1965 && d.YEAR_D1L >= 1965))) ? 1 : 0.1)
+
+
+        })
+
+      svg.append("path")
+        .attr("id", "wavy22") //Unique id of the path
+        .attr("d", `M ${width / 2 + 274}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -548,0 a 75,75 1 1,1 548,1`)
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.5)
+
+        .on('mouseover', function (d, i) {
+
+          d3.select(this)
+
+            .style('opacity', '0.6')
+        })
+        .on('mouseout', function (d, i) {
+          d3.select(this)
+            .style("stroke", "#D8D8D8")
+            .style('stroke-width', 41)
+            .style('opacity', 0.5)
+
+
+
+        })
+        .on('click', function (d, i) {
+
+          d3.select(this)
+            .style("stroke", "#fab025")
+            .style('stroke-width', 41)
+            .style('opacity', 0.3)
+
+
+
+          d3.select('#womenInfo')
+            .selectAll('text')
+            .style('opacity', (d) => (d.YEAR_BL <= 1965 && d.YEAR_DL > 1965) || (d.YEAR_BL < 1990 && d.YEAR_DL >= 1990) || (d.YEAR_B1L <= 1965 && d.YEAR_D1L > 1965) || (d.YEAR_B1L < 1990 && d.YEAR_D1L >= 1990) ? 1 : 0.1)
+
+
+        })
+
+
+
+      svg.append("path")
+        .attr("id", "wavy33") //Unique id of the path
+        .attr("d", `M ${width / 2 + 318}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -636,0 a 75,75 1 1,1 636,1`)
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.3)
+
+
+        .on('mouseover', function (d, i) {
+
+          d3.select(this)
+            .style('opacity', 0.4)
+        })
+        .on('mouseout', function (d, i) {
+
+          d3.select(this)
+            .style("stroke", "#D8D8D8")
+            .style('stroke-width', 41)
+            .style('opacity', 0.3)
+
+        })
+        .on('click', function (d, i) {
+
+          d3.select(this)
+            .style("stroke", "#fab025")
+            .style('stroke-width', 41)
+            .style('opacity', 0.3)
+
+
+          d3.select('#womenInfo')
+            .selectAll('text')
+            .style('opacity', (d) => (d.YEAR_BL <= 1990 && d.YEAR_DL > 1990) || (d.YEAR_BL < 2015 && d.YEAR_DL >= 2015) || (d.YEAR_B1L <= 1990 && d.YEAR_D1L > 1990) || (d.YEAR_B1L < 2015 && d.YEAR_D1L >= 2015) ? 1 : 0.1)
+
+
+        })
+
+
+      svg.append("path")
+        .attr("id", "wavy44") //Unique id of the path
+        .attr("d", `M ${width / 2 + 363}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -724,0 a 75,75 1 1,1 724,1`)
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.1)
+
+
+
+
+        .on('mouseover', function (d, i) {
+
+          d3.select(this)
+            .style('opacity', 0.2)
+        })
+        .on('mouseout', function (d, i) {
+
+          d3.select(this)
+            .style("stroke", "#D8D8D8")
+            .style('stroke-width', 41)
+            .style('opacity', 0.1)
+
+        })
+
+        .on('click', function (d, i) {
+
+          d3.select(this)
+            .style("stroke", "#fab025")
+            .style('stroke-width', 41)
+            .style('opacity', 0.3)
+
+
+          d3.select('#text_build')
+            .selectAll('text')
+            .style('font-size', '50px')
+            .attr('fill', 'yellow')
+
+          d3.select('#womenInfo')
+            .selectAll('text')
+            .style('opacity', (d) => (d.YEAR_BL <= 2015 && d.YEAR_DL > 2015) || (d.YEAR_BL < 2040 && d.YEAR_DL >= 2040) || (d.YEAR_B1L <= 2015 && d.YEAR_D1L > 2015) || (d.YEAR_B1L < 2040 && d.YEAR_D1L >= 2040) ? 1 : 0.1)
+
+
+        })
+
+
+
+
+      // SVG CHART
+      const chartElGroup = svg
+        .append("g")
+        .attr("id", "chartElGroup")
+        .attr("transform", `translate(0,${margin.top})`);
+
+      // RADIAL BARS
+      const barsGroup = chartElGroup
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+
+      ///////////
+
+      // NEW!! Aux elements for interaction
+      const barsAux = chartElGroup
+        .append("g")
+        .attr("id", "barsAux")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+
+
+      barsAux
+        .selectAll("a")
+        .data(data)
+        .enter()
+        .append("a")
+        .attr("target", "_blank")
+        .attr("href", (d) =>
+          d.wikipedia != "" && d.wikipedia != "x" ? d.wikipedia : null
+        )
+        .append("path")
+        .attr("class", "aux")
+        .attr("data-id", (d) => d.id)
+        .attr("fill", "transparent")
+        .attr(
+          "d",
+          d3
+            .arc()
+            .innerRadius(innerRadius)
+            .outerRadius(500)
+            .startAngle((d) => x(d.id))
+            .endAngle((d) => x(d.id) + x.bandwidth())
+            .padAngle(0.1)
+            .padRadius(innerRadius)
+        )
+        .style("cursor", (d) =>
+          d.wikipedia != "" && d.wikipedia != "x" ? "pointer" : "auto"
+        )
+        .on("mouseover", onMouseOver)
+        .raise()
+        .on("mouseout", onMouseOut);
+
+
+
+
+
+
+
+
+
+      barsGroup
+        .selectAll("path")
+        .data(data)
+        .enter()
+        .append("path")
+        .attr("data-id", (d) => d.id)
+        .attr("fill", (d => `${d["COLOR"]}` || colorMain))
+        .attr(
+          "d",
+          d3
+            .arc()
+            .innerRadius((d) => y(+1940))
+            .outerRadius((d) => y(+2040))
+            .startAngle((d) => x(d.id))
+            .endAngle((d) => x(d.id) + x.bandwidth())
+            .padAngle(0.5)
+            .padRadius(innerRadius)
+        )
+        .attr("opacity", 0)
+        .transition()
+        .duration(5)
+        .delay((d, i) => i * 15)
+        .attr("opacity", 0)
+        .style("pointer-events", "none");
+
+
+      const rectBar = chartElGroup
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+
+
+
+      const rectBar1 = chartElGroup
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+
+
+      rectBar
+        .selectAll("path")
+        .style('z-index', 3)
+        .data(data)
+        .enter()
+        .append("path")
+        .attr("data-id", (d) => d.id)
+        .attr("fill", (d => `#6E7777` || colorMain))
+        .attr(
+          "d",
+          d3
+            .arc()
+            .innerRadius((d) => y(+d["YEAR_BL"]))
+            .outerRadius((d) => y(+d["YEAR_DL"] || 2021))
+            .startAngle((d) => x(d.id) + 0.11)
+            .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
+            .padAngle(-0.4)
+            .padRadius(outerRadius)
+        )
+        .attr("opacity", 1)
+        .transition()
+        .duration(500)
+        // .delay((d, i) => i * 15)
+        .attr("opacity", 1)
+        .style("pointer-events", "none");
+
+
+
+
+
+
+
+
+      rectBar1
+        .selectAll("path")
+        .style('z-index', 3)
+        .data(data)
+        .enter()
+        .append("path")
+        .attr("data-id", (d) => d.id)
+        .attr("fill", (d => `#6E7777` || colorMain))
+        .attr(
+          "d",
+          d3
+            .arc()
+            .innerRadius((d) => y(+d["YEAR_B1L"]))
+            .outerRadius((d) => y(+d["YEAR_D1L"]))
+            .startAngle((d) => x(d.id) + 0.11)
+            .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
+            .padAngle(-0.4)
+            .padRadius(outerRadius)
+        )
+
+        .attr("opacity", 1)
+        .transition()
+        .duration(500)
+        // .delay((d, i) => i * 15)
+        .attr("opacity", 1)
+
+        .style("pointer-events", "none");
+
+
+
+
+
+
+      ///////
+
+      // TIME RINGS
+      const decades = [1890, 1940, 1965, 1990, 2015, 2040];
+      const constDates = chartElGroup.append("g").attr("id", "circlesDates");
+      const constDates1 = chartElGroup.append("g").attr("id", "circlesDates");
+
+
+      const myrect1 = chartElGroup.append("g").attr("id", "myrect");
+
+      myrect1
+        .append("rect")
+        .attr("width", 45)
+        .attr("height", 20)
+        .attr("x", width / 2 + 210)
+        .attr("y", height / 2 - 10)
+        .attr("fill", "transparent")
+        .on('mouseover', function (d, i) {
+          console.log("wavy1")
+          d3.select("#wavy11")
+            .style('opacity', 0.8)
+        })
+        .on('mouseout', function (d, i) {
+          d3.select("#wavy11")
+            .style('opacity', 0.7)
+            .style("stroke", "#D8D8D8")
+            .style('stroke-width', 42)
+
+        })
+        .on('click', function (d, i) {
+          d3.select("#wavy11")
+            .style("stroke", "#fab025")
+            .style('stroke-width', 42)
+            .style('opacity', 0.3)
+          d3.select('#womenInfo')
+            .selectAll('text')
+            .style('opacity', (d) => ((d.YEAR_BL <= 1940 && d.YEAR_DL > 1940) || (d.YEAR_BL < 1965 && d.YEAR_DL >= 1965) || ((d.YEAR_B1L <= 1940 && d.YEAR_D1L > 1940) || (d.YEAR_B1L < 1965 && d.YEAR_D1L >= 1965))) ? 1 : 0.1)
+        })
+
+
+
+
+        myrect1
+        .append("rect")
+        .attr("width", 45)
+        .attr("height", 20)
+        .attr("x", width / 2 + 250)
+        .attr("y", height / 2 - 10)
+        .attr("fill", "transparent")
+        .on('mouseover', function (d, i) {
+          console.log("wavy1")
+          d3.select("#wavy11")
+            .style('opacity', 0.8)
+        })
+          .on('mouseover', function (d, i) {
+          console.log("wavy2")
+          d3.select("#wavy22")
+
+            .style('opacity', '0.6')
+        })
+        .on('mouseout', function (d, i) {
+          d3.select("#wavy22")
+            .style("stroke", "#D8D8D8")
+            .style('stroke-width', 41)
+            .style('opacity', 0.5)
+
+
+
+        })
+        .on('click', function (d, i) {
+
+          d3.select("#wavy22")
+            .style("stroke", "#fab025")
+            .style('stroke-width', 41)
+            .style('opacity', 0.3)
+
+
+
+          d3.select('#womenInfo')
+            .selectAll('text')
+            .style('opacity', (d) => (d.YEAR_BL <= 1965 && d.YEAR_DL > 1965) || (d.YEAR_BL < 1990 && d.YEAR_DL >= 1990) || (d.YEAR_B1L <= 1965 && d.YEAR_D1L > 1965) || (d.YEAR_B1L < 1990 && d.YEAR_D1L >= 1990) ? 1 : 0.1)
+
+
+        })
+
+
+
+        myrect1
+        .append("rect")
+        .attr("width", 45)
+        .attr("height", 20)
+        .attr("x", width / 2 + 295)
+        .attr("y", height / 2 - 10)
+        .attr("fill", "transparent")
+        .on('mouseover', function (d, i) {
+          console.log("wavy1")
+          d3.select("#wavy11")
+            .style('opacity', 0.8)
+        })
+          .on('mouseover', function (d, i) {
+          console.log("wavy3")
+          d3.select("#wavy33")
+            .style('opacity', 0.4)
+        })
+        .on('mouseout', function (d, i) {
+
+          d3.select("#wavy33")
+            .style("stroke", "#D8D8D8")
+            .style('stroke-width', 41)
+            .style('opacity', 0.3)
+
+        })
+        .on('click', function (d, i) {
+
+          d3.select("#wavy33")
+            .style("stroke", "#fab025")
+            .style('stroke-width', 41)
+            .style('opacity', 0.3)
+
+
+          d3.select('#womenInfo')
+            .selectAll('text')
+            .style('opacity', (d) => (d.YEAR_BL <= 1990 && d.YEAR_DL > 1990) || (d.YEAR_BL < 2015 && d.YEAR_DL >= 2015) || (d.YEAR_B1L <= 1990 && d.YEAR_D1L > 1990) || (d.YEAR_B1L < 2015 && d.YEAR_D1L >= 2015) ? 1 : 0.1)
+
+
+        })
+
+
+
+        myrect1
+        .append("rect")
+        .attr("width", 45)
+        .attr("height", 20)
+        .attr("x", width / 2 + 342)
+        .attr("y", height / 2 - 10)
+        .attr("fill", "transparent")
+        .on('mouseover', function (d, i) {
+          console.log("wavy1")
+          d3.select("#wavy11")
+            .style('opacity', 0.8)
+        })
+          .on('mouseover', function (d, i) {
+          console.log("wavy4")
+          d3.select("#wavy44")
+            .style('opacity', 0.2)
+        })
+        .on('mouseout', function (d, i) {
+
+          d3.select("#wavy44")
+            .style("stroke", "#D8D8D8")
+            .style('stroke-width', 41)
+            .style('opacity', 0.1)
+
+        })
+
+        .on('click', function (d, i) {
+
+          d3.select("#wavy44")
+            .style("stroke", "#fab025")
+            .style('stroke-width', 41)
+            .style('opacity', 0.3)
+
+
+          d3.select('#text_build')
+            .selectAll('text')
+            .style('font-size', '50px')
+            .attr('fill', 'yellow')
+
+          d3.select('#womenInfo')
+            .selectAll('text')
+            .style('opacity', (d) => (d.YEAR_BL <= 2015 && d.YEAR_DL > 2015) || (d.YEAR_BL < 2040 && d.YEAR_DL >= 2040) || (d.YEAR_B1L <= 2015 && d.YEAR_D1L > 2015) || (d.YEAR_B1L < 2040 && d.YEAR_D1L >= 2040) ? 1 : 0.1)
+
+
+        })
+
+
+        
+
+
+      // const innerData = ["", ".    DESIGN", , "", "BUILD", "", ".       USE", "", ".  END OF"];
+
+
+
+
+
+      // .on('mouseover', function (d, i) {
+      //   console.log(this)
+      //   d3.select(this)
+
+      //     .style('stroke-width', 40)
+
+      //     .style("stroke", (d, i) => color[i])
+      // })
+
+      constDates
+        .selectAll("circle")
+        .data(decades)
+        .join("circle")
+        .attr("cx", width / 2)
+        .attr("cy", height / 2)
+        .attr("r", (d) => y(d))
+        .style("pointer-events", "none")
+        // .each(function(d,i,j) {
+        //   console.log(i, d, this);
+        //   // console.log(this);
+        //   console.log(i, color[i])
+        //   d3.select(this)
+        //     .attr("fill",color[i])
+        //     .style("pointer-events", "all")
+        //     .on('mouseover',function(l){
+        //       console.log(l)
+        //       console.log(d)
+        //       console.log(i)
+        //       console.log(j)
+        //       console.log(this)
+        //     })
+
+        // })
+        .style("fill", 'none')
+
+
+
+        // .style('stroke-width', 40)
+        //         .style('stroke', (d) => col(d.name)) 
+        // .style("stroke", (d,i)=> color[i])
+
+        .style("stroke", 'black')
+        .style("stroke-dasharray", "3")
+        .style("pointer-events", "none")
+        .style("opacity", 1)
+        .raise();
+
+
+
+
+      var sample1 = constDates
+        .selectAll("text_design")
+        .data(['DESIGN'])
+        .join("text")
+        .attr('id', 'text_design')
+        .attr("x", (d, i) => width / 2 + 209)
+        .attr("y", (d) => height / 2)
+        .text((d) => d)
+        .style("fill", "black")
+        .style('text-anchor', 'start')
+        // .attr('transform', 'rotate(89 830 490)')
+        .style("opacity", 1)
+        .style('font-weight', '600')
+        .attr('font-family', 'Inter')
+        .style("font-size", "11px")
+        .style("pointer-events", "all")
+        .on('click', (d, i) => {
+          console.log("Work done")
+        })
+
+
+      sample1
+        .on('click', (d, i) => {
+          console.log("Work done")
+        })
+
+
+
+      d3.selectAll("text_design")
+        .on('click', (d, i) => {
+          console.log("Work done2")
+        })
+
+
+
+
+
+
+
+
+      constDates
+        .selectAll("text_build")
+        .attr('id', 'text_build')
+        .data(['BUILD'])
+        .join("text")
+        .attr("x", (d, i) => width / 2 + 256)
+        .attr("y", (d) => height / 2)
+        .text((d) => d)
+        .style("fill", "black")
+        .style("opacity", 1)
+        .style('font-weight', '600')
+        .attr('font-family', 'Inter')
+        .style("font-size", "11px")
+
+        .style("pointer-events", "all");
+
+
+
+
+
+
+
+      constDates
+        .selectAll("text_use")
+        .attr('id', 'text_use')
+        .data(['USE'])
+        .join("text")
+        .attr("x", (d, i) => width / 2 + 306)
+        .attr("y", (d) => height / 2)
+        .text((d) => d)
+        .style("fill", "black")
+        .style("opacity", 1)
+        .style('font-weight', '600')
+        .attr('font-family', 'Inter')
+        .style("font-size", "11px")
+        .style("pointer-events", "none");
+
+      constDates
+        .selectAll("text_endof")
+        .attr('id', 'text_endof')
+        .data(['END OF'])
+        .join("text")
+        .attr("x", (d, i) => width / 2 + 341)
+        .attr("y", (d) => height / 2)
+        .text((d) => d)
+        .style('font-weight', '600')
+        .style("fill", "black")
+        .style("opacity", 0.9)
+        .attr('font-family', 'Inter')
+        .style("font-size", "11px")
+        .style("pointer-events", "none");
+
+
+
+
+
+
+      constDates
+        .selectAll("text2")
+        .data(["LIFE"])
+        .attr('id', 'text_endof')
+        .join("text")
+        .attr("x", (d, i) => width / 2 + 350)
+        .attr("y", (d) => height / 2 + 20)
+        .text((d) => d)
+        .style("fill", "black")
+        .style("opacity", 0.9)
+        .style('font-weight', '600')
+        .attr('font-family', 'Inter')
+        .style("font-size", "11px")
+        .style("pointer-events", "none");
+
+
+      constDates1
+        .selectAll("circle")
+        .data(decades)
+        .join("circle")
+        .attr("cx", width / 2)
+        .attr("cy", height / 2)
+        .attr("r", (d) => y(d))
+
+        .style("fill", "transparent")
+        .each(function (d, i, j) {
+          console.log(i, d, this);
+          d3.select(this)
+          // .attr("fill", 'grey')
+          // .style('opacity', 0.1)  
+        })
+
+
+
+      constDates1
+        .selectAll("circle")
+        .data(decades)
+        .join("circle")
+        .attr("cx", width / 2)
+        .attr("cy", height / 2)
+        .attr("r", (d) => y(d))
+        // .style("fill", "none")
+        .each(function (d, i, j) {
+
+          if (i == 1) {
+            console.log(i, d, this);
+
+
+            d3.select(this)
+              .attr("fill", 'white')
+
+              .style('opacity', 1)
+          }
+
+        })
+
+
+
+
+
+      constDates1
+        .selectAll("text")
+        .data(["BUILDING LIFECYCLE"])
+        .join("text")
+        .attr("x", (d, i) => width / 2 + 410)
+        .attr("y", (d) => height / 2)
+        .text((d) => d)
+
+        .style("fill", "black")
+        .style("opacity", 1)
+        .attr("font-family", "Inter")
+        .style("font-size", "15px")
+        .style("pointer-events", "none");
+
+
+
+
+      const circle22 = chartElGroup.append("g").attr("id", "circlesDates");
+      circle22
+        .selectAll("circle")
+        .data(decades)
+        .join("circle")
+        .attr("cx", width / 2)
+        .attr("cy", height / 2)
+        .attr("r", (d) => y(d))
+        .style("fill", "none")
+        .each(function (d, i, j) {
+          console.log(i, d, this);
+
+
+          d3.select(this)
+          // .attr("fill", color[i])
+          // .style('stroke-width', 40)
+          // .style("stroke", (d) => color[i])
+          // .style('opacity',0.1)
+
+        })
+
+
+
+
+
+      circle22
+        .selectAll("text")
+        .data([""])
+        .join("text")
+        .attr("x", (d, i) => width / 2 - 30)
+        .attr("y", (d) => height / 2)
+        .text((d) => d)
+
+        .style("fill", "black")
+        .style("opacity", 1)
+        .style("font-size", "15px")
+        .attr('font-family', 'Inter')
+        .style("pointer-events", "none")
+      // .attr("transform", function(d, i) { return "rotate(" + (10) + ")"; })
+      // .attr("translate", 80)
+
+
+
+
+
+      // var svg2 = d3.select("body").append("svg")
+
+      svg.append("path")
+        .attr("id", "wavy") //Unique id of the path
+        .attr("d", `M ${width / 2 + 162}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -320,0 a 75,75 1 1,1 320,1`)
+        .style("fill", "none")
+        // .style("stroke", "#C5FD89 ")
+        .style('stroke-width', 30)
+        .style('opacity', 0.9)
+
+        .on('mouseover', function (d, i) {
+          console.log("DD")
+          d3.select(this).transition()
+            .duration('50')
+            .attr('opacity', '.85')
+        })
+
+        .on('mouseout', function (d, i) {
+          d3.select(this).transition()
+            .duration('50')
+            .attr('opacity', '1')
+        })
+
+
+
+      // svg.append("path")
+      // .attr("id", "wavy1") //Unique id of the path
+      // .attr("d", `M ${width / 2 + 230}, ${height / 2 + 159.5} m 0, 0 a -75,-75 1 1,1 -460,0 a 75,75 1 1,1 460,1`)
+      // .style("fill", "none")
+      // .style("stroke", "#D8D8D8")
+      // .style('stroke-width', 42)
+      // .style('opacity', 0.0)
+
+
+
+
+      // .on('mouseover', function (d, i) {
+      //   console.log("wavy1")
+      //   d3.select("#wavy11")
+      //     .style('opacity', 0.8)
+      // })
+      // .on('mouseout', function (d, i) {
+      //   d3.select("#wavy11")
+      //     .style('opacity', 0.7)
+      //     .style("stroke", "#D8D8D8")
+      //     .style('stroke-width', 42)
+
+      // })
+      // .on('click', function (d, i) {
+
+      //   d3.select("#wavy11")
+
+      //     .style("stroke", "#fab025")
+      //     .style('stroke-width', 42)
+      //     .style('opacity', 0.3)
+
+
+
+      //   d3.select('#womenInfo')
+      //     .selectAll('text')
+      //     .style('opacity', (d) => ((d.YEAR_B <= 1940 && d.YEAR_D > 1940) || (d.YEAR_B < 1965 && d.YEAR_D >= 1965) || ((d.YEAR_B1 <= 1940 && d.YEAR_D1 > 1940) || (d.YEAR_B1 < 1965 && d.YEAR_D1 >= 1965))) ? 1 : 0.1)
+
+
+      // })
+
+
+
+
+      // svg.append("path")
+      //   .attr("id", "wavy2") //Unique id of the path
+      //   .attr("d", `M ${width / 2 + 274}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -548,0 a 75,75 1 1,1 548,1`)
+      //   .style("fill", "none")
+      //   .style("stroke", "#D8D8D8")
+      //   .style('stroke-width', 41)
+      //   .style('opacity', 0)
+
+        // .on('mouseover', function (d, i) {
+        //   console.log("wavy2")
+        //   d3.select("#wavy22")
+
+        //     .style('opacity', '0.6')
+        // })
+        // .on('mouseout', function (d, i) {
+        //   d3.select("#wavy22")
+        //     .style("stroke", "#D8D8D8")
+        //     .style('stroke-width', 41)
+        //     .style('opacity', 0.5)
+
+
+
+        // })
+        // .on('click', function (d, i) {
+
+        //   d3.select("#wavy22")
+        //     .style("stroke", "#fab025")
+        //     .style('stroke-width', 41)
+        //     .style('opacity', 0.3)
+
+
+
+        //   d3.select('#womenInfo')
+        //     .selectAll('text')
+        //     .style('opacity', (d) => (d.YEAR_B <= 1965 && d.YEAR_D > 1965) || (d.YEAR_B < 1990 && d.YEAR_D >= 1990) || (d.YEAR_B1 <= 1965 && d.YEAR_D1 > 1965) || (d.YEAR_B1 < 1990 && d.YEAR_D1 >= 1990) ? 1 : 0.1)
+
+
+        // })
+
+
+
+      // svg.append("path")
+      //   .attr("id", "wavy3") //Unique id of the path
+      //   .attr("d", `M ${width / 2 + 318}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -636,0 a 75,75 1 1,1 636,1`)
+      //   .style("fill", "none")
+      //   .style("stroke", "#D8D8D8")
+      //   .style('stroke-width', 41)
+      //   .style('opacity', 0)
+
+
+        // .on('mouseover', function (d, i) {
+        //   console.log("wavy3")
+        //   d3.select("#wavy33")
+        //     .style('opacity', 0.4)
+        // })
+        // .on('mouseout', function (d, i) {
+
+        //   d3.select("#wavy33")
+        //     .style("stroke", "#D8D8D8")
+        //     .style('stroke-width', 41)
+        //     .style('opacity', 0.3)
+
+        // })
+        // .on('click', function (d, i) {
+
+        //   d3.select("#wavy33")
+        //     .style("stroke", "#fab025")
+        //     .style('stroke-width', 41)
+        //     .style('opacity', 0.3)
+
+
+        //   d3.select('#womenInfo')
+        //     .selectAll('text')
+        //     .style('opacity', (d) => (d.YEAR_B <= 1990 && d.YEAR_D > 1990) || (d.YEAR_B < 2015 && d.YEAR_D >= 2015) || (d.YEAR_B1 <= 1990 && d.YEAR_D1 > 1990) || (d.YEAR_B1 < 2015 && d.YEAR_D1 >= 2015) ? 1 : 0.1)
+
+
+        // })
+
+
+      // svg.append("path")
+      //   .attr("id", "wavy4") //Unique id of the path
+      //   .attr("d", `M ${width / 2 + 363}, ${height / 2 + 160} m 0, 0 a -75,75 1 1,1 -724,0 a 75,75 1 1,1 724,1`)
+      //   .style("fill", "none")
+      //   .style("stroke", "#D8D8D8")
+      //   .style('stroke-width', 41)
+      //   .style('opacity', 0)
+
+
+
+
+        // .on('mouseover', function (d, i) {
+        //   console.log("wavy4")
+        //   d3.select("#wavy44")
+        //     .style('opacity', 0.2)
+        // })
+        // .on('mouseout', function (d, i) {
+
+        //   d3.select("#wavy44")
+        //     .style("stroke", "#D8D8D8")
+        //     .style('stroke-width', 41)
+        //     .style('opacity', 0.1)
+
+        // })
+
+        // .on('click', function (d, i) {
+
+        //   d3.select("#wavy44")
+        //     .style("stroke", "#fab025")
+        //     .style('stroke-width', 41)
+        //     .style('opacity', 0.3)
+
+
+        //   d3.select('#text_build')
+        //     .selectAll('text')
+        //     .style('font-size', '50px')
+        //     .attr('fill', 'yellow')
+
+        //   d3.select('#womenInfo')
+        //     .selectAll('text')
+        //     .style('opacity', (d) => (d.YEAR_B <= 2015 && d.YEAR_D > 2015) || (d.YEAR_B < 2040 && d.YEAR_D >= 2040) || (d.YEAR_B1 <= 2015 && d.YEAR_D1 > 2015) || (d.YEAR_B1 < 2040 && d.YEAR_D1 >= 2040) ? 1 : 0.1)
+
+
+        // })
+
+
+
+
+
+
+
+
+
+
+
+
+      //Create an SVG text element and append a textPath element
+      svg.append("text")
+        .append("textPath") //append a textPath to the text element
+        .attr("xlink:href", "#wavy") //place the ID of the path here
+        .style("text-anchor", "middle") //place the text halfway on the arc
+        .attr("startOffset", "80%")
+        .style('font-weight', '800')
+        .attr('font-family', 'Inter')
+        .text(["Decision Making"])
+        .style('font-size', '18px')
+
+
+
+      svg.append("text")
+        .append("textPath") //append a textPath to the text element
+        .attr("xlink:href", "#wavy") //place the ID of the path here
+        .style("text-anchor", "middle") //place the text halfway on the arc
+        .attr("startOffset", "60%")
+        .style('font-weight', '800')
+        .attr('font-family', 'Inter')
+        .text(["Design"])
+        .style('font-size', '18px')
+
+
+      svg.append("text")
+        .append("textPath") //append a textPath to the text element
+        .attr("xlink:href", "#wavy") //place the ID of the path here
+        .style("text-anchor", "middle") //place the text halfway on the arc
+        .attr("startOffset", "47%")
+        .attr('font-family', 'Inter')
+        .style('font-weight', '800')
+        .text(["Users"])
+        .style('font-size', '18px')
+
+      svg.append("text")
+        .append("textPath") //append a textPath to the text element
+        .attr("xlink:href", "#wavy") //place the ID of the path here
+        .style("text-anchor", "middle") //place the text halfway on the arc
+        .attr("startOffset", "20%")
+        .attr('font-family', 'Inter')
+        .style('font-weight', '800')
+        .text(["Knowledge Transfer"])
+        .style('font-size', '18px')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // WOMEN'S INFO
+      const womenInfoGroup = chartElGroup
+        .append("g")
+        .attr("id", "womenInfo")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+      womenInfoGroup
+        .selectAll("g")
+        .data(data)
+        .enter()
+        .append("g")
+        .attr("class", "womanInfo")
+        .attr("id", (d) => d.id)
+        .attr("opacity", 0.8)
+        .attr("transform", function (d) {
+          const defunctionYear = +d["YEAR_DL"] || 2021;
+          const angleToRotate =
+            ((x(d.id) + x.bandwidth() / 2) * 180) / Math.PI - 90;
+          return `rotate(${angleToRotate})`;
+        })
+        .attr("text-anchor", function (d) {
+          return (x(d.id) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI
+            ? "end"
+            : "start";
+        })
+        .each(function (d) {
+          const el = d3.select(this);
+
+          // NAMES (anchors to wikipedia links)
+          el.append("text")
+            .attr("data-id", (d) => d.id)
+            .style('opacity', 1)
+
+            .attr("x", function (d) {
+              return (x(d.id) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) <
+                Math.PI
+                ? -y(2045)
+                : y(2045)
+            })
+            .attr("y", 0)
+            .text((d) => `${d.NAME} `)
+            .style("font-size", "20px")
+            .attr('font-family', 'Inter')
+            .style('fill',(d) => d.COLOR || 'black')
+            .style('opacity', 1)
+
+            .style("dominant-baseline", "middle")
+            // Rotation to improve readability
+            .attr("transform", function (d) {
+              return (x(d.id) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) <
+                Math.PI
+                ? "rotate(180)"
+                : "rotate(0)";
+
+
+
+            })
+          el.append("text")
+            .attr("data-id", (d) => d.id)
+            .style('opacity', 1)
+
+            .attr("x", function (d) {
+              return (x(d.id) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) <
+                Math.PI
+                ? -y(2045)
+                : y(2045)
+            })
+            .attr("y", 25)
+            .text((d) => `${d.SURNAME}`)
+            .style("font-size", "20px")
+            .attr('font-family', 'Inter')
+
+            .style('fill', (d) => d.COLOR || 'black')
+            .style('opacity', 1)
+
+            .style("dominant-baseline", "middle")
+            // Rotation to improve readability
+            .attr("transform", function (d) {
+              return (x(d.id) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) <
+                Math.PI
+                ? "rotate(180)"
+                : "rotate(0)";
+            })
+
+
+
+
+
+
+
+          // LINES
+          el.append("line")
+            .attr("x1", 120)
+            .attr("x2", y(2040))
+            .attr("y1", 0)
+            .attr("y2", 0)
+            .style("stroke", "")
+            .style("opacity", 0.7)
+            .style("stroke-width", 0.15);
+
+          // SELECTED WORK POINT
+          el.append("circle")
+            .attr("class", "selectedWorkPoint")
+            .attr("cx", (d) => y(extractWorkYear(d)))
+            .attr("cy", 0)
+            .attr("r", 2.5)
+            .style("fill", "none");
+        })
+        .style("pointer-events", "none");
+
+      // LEGEND
+      // Just on desktop
+
+
+
+
+      const rectBar11 = chartElGroup
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+        .raise()
+
+
+      
+        const rectBar22 = chartElGroup
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+        .raise()
+
+
+        
+      const rectBar33 = chartElGroup
+      .append("g")
+      .attr("id", "barsGroup")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+      .raise()
+
+
+      
+      const rectBar44 = chartElGroup
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+        .raise()
+
+
+      
+
+
+
+
+        const rectBar111 = chartElGroup
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+        .raise()
+
+
+        const rectBar222 = chartElGroup
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+        .raise()
+
+
+        const rectBar333 = chartElGroup
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+        .raise()
+
+
+        const rectBar444 = chartElGroup
+        .append("g")
+        .attr("id", "barsGroup")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+        .raise()
+
+
+      //Indivisual block selection Ring 1a=> 
+      rectBar11
+        .selectAll("path")
+
+        .data(data)
+        .enter()
+        .append("path")
+        .attr("data-id", (d) => d.id)
+        .attr("fill", (d => `#6E7777` || colorMain))
+        .attr(
+          "d",
+          d3
+            .arc()
+            .innerRadius((d) => y(+ring1Inner(d["YEAR_BL"])))
+            .outerRadius((d) => y(+ring1Outer(d["YEAR_DL"])))
+            .startAngle((d) => x(d.id) + 0.11)
+            .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
+            .padAngle(-0.4)
+            .padRadius(outerRadius)
+        )
+        .on('mouseover', function (d, i) {
+
+          console.log("FFFF")
+          d3.select(this)
+            .attr('fill', (d => `yellow`))
+        })
+        .on('mouseout', function (d, i) {
+
+
+          d3.select(this)
+            .attr('fill', (d => `#6E7777` || colorMain))
+        })
+        .attr("opacity", 1)
+        .raise()
+        .style("pointer-events", "all");
+
+      //Indivisual block selection Ring 1b=> 
+      // rectBar111
+      //   .selectAll("path")
+
+      //   .data(data)
+      //   .enter()
+      //   .append("path")
+      //   .attr("data-id", (d) => d.id)
+      //   .attr("fill", (d => `${d["COLOR"]}` || colorMain))
+      //   .attr(
+      //     "d",
+      //     d3
+      //       .arc()
+      //       .innerRadius((d) => y(+ring1Inner(d["YEAR_B1"])))
+      //       .outerRadius((d) => y(+ring1Outer(d["YEAR_D1"])))
+      //       .startAngle((d) => x(d.id) + 0.11)
+      //       .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
+      //       .padAngle(-0.4)
+      //       .padRadius(outerRadius)
+      //   )
+      //   .on('mouseover', function (d, i) {
+
+      //     console.log("FFFF")
+      //     d3.select(this)
+      //       .attr('fill', (d => `yellow`))
+      //   })
+      //   .on('mouseout', function (d, i) {
+
+
+      //     d3.select(this)
+      //       .attr('fill', (d => `${d["COLOR"]}` || colorMain))
+      //   })
+      //   .attr("opacity", 1)
+      //   .raise()
+      //   .style("pointer-events", "all");
+
+
+
+
+
+
+
+         //Indivisual block selection Ring 2a=> 
+      rectBar22
+      .selectAll("path")
+
+      .data(data)
+      .enter()
+      .append("path")
+      .attr("data-id", (d) => d.id)
+      .attr("fill", (d => `#6E7777` || colorMain))
+      .attr(
+        "d",
+        d3
+          .arc()
+          .innerRadius((d) => y(+ring2Inner(d["YEAR_BL"])))
+          .outerRadius((d) => y(+ring2Outer(d["YEAR_DL"])))
+          .startAngle((d) => x(d.id) + 0.11)
+          .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
+          .padAngle(-0.4)
+          .padRadius(outerRadius)
+      )
+      .on('mouseover', function (d, i) {
+
+        console.log("FFFF")
+        d3.select(this)
+          .attr('fill', (d => `yellow`))
+      })
+      .on('mouseout', function (d, i) {
+
+
+        d3.select(this)
+          .attr('fill', (d => `#6E7777` || colorMain))
+      })
+      .attr("opacity", 1)
+      .raise()
+      .style("pointer-events", "all");
+
+    //Indivisual block selection Ring 2b=> 
+    rectBar222
+      .selectAll("path")
+
+      .data(data)
+      .enter()
+      .append("path")
+      .attr("data-id", (d) => d.id)
+      .attr("fill", (d => `#6E7777` || colorMain))
+      .attr(
+        "d",
+        d3
+          .arc()
+          .innerRadius((d) => y(+ring2Inner(d["YEAR_B1L"])))
+          .outerRadius((d) => y(+ring2Outer(d["YEAR_D1L"])))
+          .startAngle((d) => x(d.id) + 0.11)
+          .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
+          .padAngle(-0.4)
+          .padRadius(outerRadius)
+      )
+      .on('mouseover', function (d, i) {
+
+        console.log("FFFF")
+        d3.select(this)
+          .attr('fill', (d => `yellow`))
+      })
+      .on('mouseout', function (d, i) {
+
+
+        d3.select(this)
+          .attr('fill', (d => `#6E7777` || colorMain))
+      })
+      .attr("opacity", 1)
+      .raise()
+      .style("pointer-events", "all");
+
+
+
+
+
+
+
+
+       //Indivisual block selection Ring 3a=> 
+       rectBar33
+       .selectAll("path")
+
+       .data(data)
+       .enter()
+       .append("path")
+       .attr("data-id", (d) => d.id)
+       .attr("fill", (d => `#6E7777` || colorMain))
+       .attr(
+         "d",
+         d3
+           .arc()
+           .innerRadius((d) => y(+ring3Inner(d["YEAR_BL"])))
+           .outerRadius((d) => y(+ring3Outer(d["YEAR_DL"])))
+           .startAngle((d) => x(d.id) + 0.11)
+           .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
+           .padAngle(-0.4)
+           .padRadius(outerRadius)
+       )
+       .on('mouseover', function (d, i) {
+
+         console.log("FFFF")
+         d3.select(this)
+           .attr('fill', (d => `yellow`))
+       })
+       .on('mouseout', function (d, i) {
+
+
+         d3.select(this)
+           .attr('fill', (d => `#6E7777` || colorMain))
+       })
+       .attr("opacity", 1)
+       .raise()
+       .style("pointer-events", "all");
+
+    //  Indivisual block selection Ring 3b=> 
+     rectBar333
+       .selectAll("path")
+
+       .data(data)
+       .enter()
+       .append("path")
+       .attr("data-id", (d) => d.id)
+       .attr("fill", (d => `#6E7777` || colorMain))
+       .attr(
+         "d",
+         d3
+           .arc()
+           .innerRadius((d) => y(+ring3Inner(d["YEAR_B1L"])))
+           .outerRadius((d) => y(+ring3Outer(d["YEAR_D1L"])))
+           .startAngle((d) => x(d.id) + 0.11)
+           .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
+           .padAngle(-0.4)
+           .padRadius(outerRadius)
+       )
+       .on('mouseover', function (d, i) {
+
+         console.log("FFFF")
+         d3.select(this)
+           .attr('fill', (d => `yellow`))
+       })
+       .on('mouseout', function (d, i) {
+
+
+         d3.select(this)
+           .attr('fill', (d => `#6E7777` || colorMain))
+       })
+       .attr("opacity", 1)
+       .raise()
+       .style("pointer-events", "all");
+
+
+
+
+
+
+
+
+
+
+
+        //Indivisual block selection Ring 4a=> 
+      rectBar44
+      .selectAll("path")
+
+      .data(data)
+      .enter()
+      .append("path")
+      .attr("data-id", (d) => d.id)
+      .attr("fill", (d => `#6E7777` || colorMain))
+      .attr(
+        "d",
+        d3
+          .arc()
+          .innerRadius((d) => y(+ring4Inner(d["YEAR_BL"])))
+          .outerRadius((d) => y(+ring4Outer(d["YEAR_DL"])))
+          .startAngle((d) => x(d.id) + 0.11)
+          .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
+          .padAngle(-0.4)
+          .padRadius(outerRadius)
+      )
+      .on('mouseover', function (d, i) {
+
+        console.log("FFFF")
+        d3.select(this)
+          .attr('fill', (d => `yellow`))
+      })
+      .on('mouseout', function (d, i) {
+
+
+        d3.select(this)
+          .attr('fill', (d => `#6E7777` || colorMain))
+      })
+      .attr("opacity", 1)
+      .raise()
+      .style("pointer-events", "all");
+
+    //Indivisual block selection Ring 4b=> 
+    rectBar444
+      .selectAll("path")
+
+      .data(data)
+      .enter()
+      .append("path")
+      .attr("data-id", (d) => d.id)
+      .attr("fill", (d => `#6E7777` || colorMain))
+      .attr(
+        "d",
+        d3
+          .arc()
+          .innerRadius((d) => y(+ring4Inner(d["YEAR_B1L"])))
+          .outerRadius((d) => y(+ring4Outer(d["YEAR_D1L"])))
+          .startAngle((d) => x(d.id) + 0.11)
+          .endAngle((d) => x(d.id) + x.bandwidth() - 0.11)
+          .padAngle(-0.4)
+          .padRadius(outerRadius)
+      )
+      .on('mouseover', function (d, i) {
+
+        console.log("FFFF")
+        d3.select(this)
+          .attr('fill', (d => `yellow`))
+      })
+      .on('mouseout', function (d, i) {
+
+
+        d3.select(this)
+          .attr('fill', (d => `#6E7777` || colorMain))
+      })
+      .attr("opacity", 1)
+      .raise()
+      .style("pointer-events", "all");
+
+
+
+      if (width >= 340) {
+        d3.select("#barsGroup path") // First path
+          .clone()
+          .attr("id", "legendBar")
+          .attr("transform", "translate(10, 475)rotate(-5)");
+        d3.select("#womenInfo g .selectedWorkPoint") // First group
+          .clone()
+          .attr("id", "legendInfo")
+          .attr("transform", "translate(10, 445)");
+
+        const legend = svg
+          .append("g")
+          .attr("id", "legend")
+          // Apply same transform as chart
+          .attr("transform", "translate(" + width / 2 + "," + height + ")");
+        legend
+          .append("line")
+          .attr("x1", outerRadius - 107)
+          .attr("x2", outerRadius - 107)
+          .attr("y1", 133)
+          .attr("y2", 153)
+          .style("stroke", "black")
+          .style("stroke-width", 0.5)
+          .style("stroke-dasharray", 3);
+        legend
+          .append("line")
+          .attr("x1", outerRadius - 29)
+          .attr("x2", outerRadius - 29)
+          .attr("y1", 100)
+          .attr("y2", 130)
+          .style("stroke", "black")
+          .style("stroke-width", 0.5)
+          .style("stroke-dasharray", 3);
+        legend
+          .append("text")
+          .attr("x", outerRadius - 180)
+          .attr("y", 155)
+          .text(locale[languageSelector].legend.yearOfBirth)
+          .style("font-size", "12px")
+          .attr('font-family', 'Inter')
+        legend
+          .append("text")
+          .attr("x", outerRadius + 20)
+          .attr("y", 135)
+          .text(locale[languageSelector].legend.name)
+          .style("opacity", 0.5)
+          .attr('font-family', 'Inter')
+          .style("font-size", "16px");
+        legend
+          .append("text")
+          .attr("x", outerRadius - 70)
+          .attr("y", 75)
+          .text(locale[languageSelector].legend.exampleWork.a)
+          .style("font-size", "12px");
+        legend
+          .append("text")
+          .attr("x", outerRadius - 70)
+          .attr("y", 90)
+          .text(locale[languageSelector].legend.exampleWork.b)
+          .attr('font-family', 'Inter')
+          .style("font-size", "12px");
+      }
+
+
+
+
+
+    }
+  )
+}
+
+
+
+
 
 
 
@@ -2496,6 +4236,10 @@ function _styles(html, colorBckg) {
   svg {
     font-family: 'Baumans', sans-serif;
   }
+
+  #radialChart3 {
+    background-color: ${colorBckg};
+  }
   #radialChart {
     background-color: ${colorBckg};
   }
@@ -2607,9 +4351,12 @@ export default function define(runtime, observer) {
   main.variable(observer()).define(["languageSelector", "md"], _3);
   main.variable(observer("chart2")).define("chart2", ["html", "styles", "drawRadialChart"], _chart2);
 
+  main.variable(observer("chart3")).define("chart3", ["html", "styles", "drawRadialChart3"], _chart3);
+
 
   // main.variable(observer("data1")).define("data1", _data1);
   main.variable(observer("drawRadialChart")).define("drawRadialChart", ["heightRadial", "xRadial", "yRadial", "d3", "width", "margin", "locale", "languageSelector", "colorMain", "data", "innerRadius", "outerRadius", "onMouseOver", "onMouseOut", "myDomain", "extractWorkYear"], _drawRadialChart);
+  main.variable(observer("drawRadialChart3")).define("drawRadialChart3", ["heightRadial", "xRadial", "yRadial", "d3", "width", "margin", "locale", "languageSelector", "colorMain", "data", "innerRadius", "outerRadius", "onMouseOver", "onMouseOut", "myDomain", "extractWorkYear"], _drawRadialChart3);
   main.variable(observer("onMouseOver")).define("onMouseOver", ["d3", "extractWorkNAME"], _onMouseOver);
 
   main.variable(observer("onMouseOut")).define("onMouseOut", ["d3"], _onMouseOut);

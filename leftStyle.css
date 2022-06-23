@@ -154,7 +154,7 @@ body{
     display: block;
     margin-top: 4px;
    
-    background-color: #377B65;
+    background-color: #6E7777;
     margin-right: 15px;
     
 }
@@ -163,7 +163,7 @@ body{
     width: 2.7vh;
     height: 2.7vh;
     display: block;
-    background-color: #377B65;
+    background-color: #A3BA19;
     margin-right: 15px;
     margin-top: 4px;
 }
@@ -213,7 +213,7 @@ body{
 
 .cir-lin-1{
     height: 100%;
-    background-color: black;
+    background-color: #A3BA19;
     width: 25%;
     display: inline-block;
     margin: 0;
@@ -223,7 +223,7 @@ body{
 
 .cir-lin-2{
     height: 100%;
-    background-color: blue;
+    background-color: #6E7777;
     width: 25%;
     display: inline-block;
     margin: 0;
@@ -233,7 +233,7 @@ body{
 
 .cir-lin-3{
     height: 100%;
-    background-color: yellow;
+    background-color: #67BAB3;
     width: 25%;
     display: inline-block;
     margin: 0;
@@ -243,7 +243,7 @@ body{
 
 .cir-lin-4{
     height: 100%;
-    background-color: green;
+    background-color: #C1E8C3;
     width: 25%;
     display: inline-block;
     margin: 0;

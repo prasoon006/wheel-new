@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Some of the WOMEN ARCHITECTS AND DESIGNERS I didn't hear about at university</title>
+<link rel="stylesheet" type="text/css" href="./inspector.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;900&display=swap" rel="stylesheet">
+
+<body>
+
+
+  <div >
+    <div  id="observablehq-chart2-278dcec7"></div>
+  </div>
+
+  <script type="module">
+    import { Runtime, Inspector, Library } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+    import define from "./index.js";
+
+
+    const runtime = new Runtime(Object.assign(new Library, {
+      // width: 150
+    }));
+
+    const main = runtime.module(define, name => {
+      if (name === "chart3") return new Inspector(document.querySelector("#observablehq-chart2-278dcec7"));
+    });
+
+    
+  </script>
+
+</body>

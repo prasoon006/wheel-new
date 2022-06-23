@@ -19,6 +19,11 @@
         "YEAR_D": "1972",
         "YEAR_B1": "2025",
         "YEAR_D1": "2040",
+
+        "YEAR_BL": "1940",
+        "YEAR_DL": "1965",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /recycled-wholesale.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -37,6 +42,12 @@
         "YEAR_D": "1978",
         "YEAR_B1": "2015",
         "YEAR_D1": "2040",
+
+        
+        "YEAR_BL": "2015",
+        "YEAR_DL": "2040",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /waste-treatment.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -55,6 +66,13 @@
         "YEAR_D": "1990",
         "YEAR_B1": "2015",
         "YEAR_D1": "2040",
+
+
+        
+        "YEAR_BL": "1965",
+        "YEAR_DL": "1990",
+        "YEAR_B1L": "2015",
+        "YEAR_D1L": "2040",
         "IMG_SRC_D": "<img src=\" /transportation.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -73,6 +91,13 @@
         "YEAR_D": "1975",
         "YEAR_B1": "2015",
         "YEAR_D1": "2040",
+
+
+          
+        "YEAR_BL": "2015",
+        "YEAR_DL": "2040",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /deconstruction-companies.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -91,6 +116,12 @@
         "YEAR_D": "1990",
         "YEAR_B1": "2023",
         "YEAR_D1": "2040",
+
+          
+        "YEAR_BL": "1965",
+        "YEAR_DL": "1990",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /construction-companies.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -109,6 +140,13 @@
         "YEAR_D": "1980",
         "YEAR_B1": "2028",
         "YEAR_D1": "2040",
+
+
+          
+        "YEAR_BL": "1940",
+        "YEAR_DL": "1965",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /suppliers.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -127,6 +165,13 @@
         "YEAR_D": "1990",
         "YEAR_B1": "2010",
         "YEAR_D1": "2040",
+
+
+          
+        "YEAR_BL": "1953",
+        "YEAR_DL": "1990",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /training-schools.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -145,6 +190,12 @@
         "YEAR_D": "1990",
         "YEAR_B1": "2010",
         "YEAR_D1": "2040",
+
+
+        "YEAR_BL": "1956",
+        "YEAR_DL": "1980",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /NGOs-icon.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -163,6 +214,12 @@
         "YEAR_D": "2040",
         "YEAR_B1": "",
         "YEAR_D1": "",
+
+
+        "YEAR_BL": "1943",
+        "YEAR_DL": "1969",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /institutions-icon.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -181,6 +238,12 @@
         "YEAR_D": "1950",
         "YEAR_B1": "1985",
         "YEAR_D1": "2040",
+
+
+        "YEAR_BL": "1994",
+        "YEAR_DL": "2040",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /users.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -199,6 +262,12 @@
         "YEAR_D": "1955",
         "YEAR_B1": "1990",
         "YEAR_D1": "2040",
+
+
+        "YEAR_BL": "1976",
+        "YEAR_DL": "2015",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /building-operators.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -217,6 +286,12 @@
         "YEAR_D": "2040",
         "YEAR_B1": "",
         "YEAR_D1": "",
+
+
+        "YEAR_BL": "1942",
+        "YEAR_DL": "2018",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /building-operators.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -235,6 +310,11 @@
         "YEAR_D": "1995",
         "YEAR_B1": "2015",
         "YEAR_D1": "2040",
+
+        "YEAR_BL": "1960",
+        "YEAR_DL": "1992",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /engineers.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -253,6 +333,11 @@
         "YEAR_D": "1995",
         "YEAR_B1": "2015",
         "YEAR_D1": "2040",
+
+        "YEAR_BL": "1960",
+        "YEAR_DL": "1992",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /architects.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -271,6 +356,11 @@
         "YEAR_D": "2008",
         "YEAR_B1": "2015",
         "YEAR_D1": "2040",
+
+        "YEAR_BL": "1960",
+        "YEAR_DL": "2003",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /Labels- +-Certifications-Icon.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "<b>Some details</b>",
@@ -289,6 +379,12 @@
         "YEAR_D": "2040",
         "YEAR_B1": "",
         "YEAR_D1": "",
+
+
+        "YEAR_BL": "1960",
+        "YEAR_DL": "2000",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /real-estate-icon.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "<b>Some details</b>",
@@ -307,6 +403,11 @@
         "YEAR_D": "1980",
         "YEAR_B1": "2003",
         "YEAR_D1": "2040",
+
+        "YEAR_BL": "1958",
+        "YEAR_DL": "1980",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /private-Investors-icon.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -325,6 +426,11 @@
         "YEAR_D": "1975",
         "YEAR_B1": "2015",
         "YEAR_D1": "2040",
+        
+        "YEAR_BL": "1954",
+        "YEAR_DL": "1975",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /fin-banks-icon.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -343,6 +449,11 @@
         "YEAR_D": "1990",
         "YEAR_B1": "2015",
         "YEAR_D1": "2040",
+        
+        "YEAR_BL": "1958",
+        "YEAR_DL": "1980",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /public-investors-icon.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -361,6 +472,12 @@
         "YEAR_D": "1995",
         "YEAR_B1": "2015",
         "YEAR_D1": "2040",
+
+        
+        "YEAR_BL": "1952",
+        "YEAR_DL": "1965",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /local-city-strategy.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
@@ -379,6 +496,12 @@
         "YEAR_D": "1978",
         "YEAR_B1": "2028",
         "YEAR_D1": "2040",
+
+        
+        "YEAR_BL": "1940",
+        "YEAR_DL": "1958",
+        "YEAR_B1L": "",
+        "YEAR_D1L": "",
         "IMG_SRC_D": "<img src=\" /govt-dep.png\">",
         "IMAGE": "",
         "WORKS_NA_2": "",
