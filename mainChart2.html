@@ -18,6 +18,7 @@
   <script type="module">
     import { Runtime, Inspector, Library } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
     import define from "./index.js";
+    import define2 from "./index.js";
 
 
     const runtime = new Runtime(Object.assign(new Library, {
@@ -27,6 +28,12 @@
     const main = runtime.module(define, name => {
       if (name === "chart3") return new Inspector(document.querySelector("#observablehq-chart2-278dcec7"));
     });
+
+    const main2 = runtime.module(define, name => {
+      if (name === "chart2") return new Inspector(document.querySelector("#observablehq-chart2-278dcec7"));
+    });
+
+    
 
     
   </script>

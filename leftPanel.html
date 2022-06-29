@@ -4,10 +4,53 @@
 
 <head>
 
+
   <script>
-    function onScaleClick() {
-      console.log("scale clicked");
+    function onLinearScaleClick() {
+      console.log("scale clicked -lin");
+      document.getElementById('right-cont1').style.display='none';
+      document.getElementById('right-cont2').style.display="block";
+     
+      
+      
     }
+    function onCirScaleClick() {
+      console.log("scale clicked - cir");
+      document.getElementById('right-cont2').style.display="none";
+      document.getElementById('right-cont1').style.display='block';
+      
+      
+      
+    
+    }
+  </script>
+  <script type="module">
+    import { Runtime, Inspector, Library } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+    import define from "./index.js";
+
+
+
+
+    const runtime = new Runtime(Object.assign(new Library, {
+      // width: 450
+    }));
+
+
+
+      const main = runtime.module(define, name => {
+      
+
+          if (name === "chart2") return new Inspector(document.querySelector(".right-contain-cir"));
+          if (name === "chart3") return new Inspector(document.querySelector(".right-contain-lin"));
+        
+         
+      });
+      
+
+
+    
+
+
 
   </script>
 
@@ -170,11 +213,16 @@
 
 
   <!-- FOR WHEEL -->
-  <div class="right-contain">
+
+  <div id="right-cont1" class="right-contain-cir">
 
   </div>
-  <div onclick="onScaleClick()" class="scale-tr">
-    <div class="scale-lin">
+  <div id="right-cont2" class="right-contain-lin">
+
+  </div>
+  
+  <div class="scale-tr">
+    <div onclick="onLinearScaleClick()" class="scale-lin">
       <span class="sq-lin">
 
       </span>
@@ -182,7 +230,7 @@
       Linear
     </div>
     <hr class="lin-cir-line">
-    <div class="scale-cir">
+    <div onclick="onCirScaleClick()" class="scale-cir">
       <span class="sq-cir">
       </span>
       Circular
@@ -190,7 +238,7 @@
   </div>
 
 
-  
+
   <div class="fill-lin">
 
   </div>
@@ -212,19 +260,5 @@
 </div>
 
 
-<script type="module">
-  import { Runtime, Inspector, Library } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-  import define from "./index.js";
 
-
-  const runtime = new Runtime(Object.assign(new Library, {
-    // width: 450
-  }));
-
-  const main = runtime.module(define, name => {
-    if (name === "chart2") return new Inspector(document.querySelector(".right-contain"));
-  });
-
-
-</script>
 </body>
