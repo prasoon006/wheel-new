@@ -1981,96 +1981,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
 
 //curr1
-setTimeout(() => {
-  var ignoreMe = document.getElementById("circlesDates");
-  window.addEventListener('mouseup', function (event) {
 
-    if (event.target != ignoreMe && event.target.parentNode != ignoreMe && event.path.length <= 9) {
-      console.log("I am outside")
-
-      d3.select('#womenInfo')
-        .selectAll('text')
-        .style('opacity', 1)
-      d3.select('#womenInfo3')
-        .selectAll('text')
-        .style('opacity', 1)
-
-
-
-      d3.select("#wavy11")
-        .style("fill", "none")
-        .style("stroke", "#D8D8D8")
-        .style('stroke-width', 41)
-        .style('opacity', 0.5)
-      d3.select("#wavy22")
-        .style("fill", "none")
-        .style("stroke", "#D8D8D8")
-        .style('stroke-width', 41)
-        .style('opacity', 0.5)
-      d3.select("#wavy33")
-        .style("fill", "none")
-        .style("stroke", "#D8D8D8")
-        .style('stroke-width', 41)
-        .style('opacity', 0.3)
-      d3.select("#wavy44")
-        .style("fill", "none")
-        .style("stroke", "#D8D8D8")
-        .style('stroke-width', 41)
-        .style('opacity', 0.1)
-
-
-      d3.select("#wavy11L")
-        .style("fill", "none")
-        .style("stroke", "#D8D8D8")
-        .style('stroke-width', 41)
-        .style('opacity', 0.5)
-      d3.select("#wavy22L")
-        .style("fill", "none")
-        .style("stroke", "#D8D8D8")
-        .style('stroke-width', 41)
-        .style('opacity', 0.5)
-      d3.select("#wavy33L")
-        .style("fill", "none")
-        .style("stroke", "#D8D8D8")
-        .style('stroke-width', 41)
-        .style('opacity', 0.3)
-      d3.select("#wavy44L")
-        .style("fill", "none")
-        .style("stroke", "#D8D8D8")
-        .style('stroke-width', 41)
-        .style('opacity', 0.1)
-
-
-
-
-
-
-      d3.select('#barsGroup')
-        .selectAll(`path`)
-        .style('opacity', 0);
-
-      d3.select('#barsGroup3')
-        .selectAll(`path`)
-        .style('opacity', 0);
-
-
-      d3.select('#womenInfo3')
-        .selectAll(`text`)
-        .style("fill", "black")
-        .style("font-weight", "400")
-
-      d3.select('#womenInfo')   
-        .selectAll(`text`)
-        .style("fill", "black")
-        .style("font-weight", "400")
-
-
-
-
-    }
-
-  });
-}, 500);
 
 
 
@@ -2082,6 +1993,98 @@ setTimeout(() => {
 function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, locale, languageSelector, colorMain, data, innerRadius, outerRadius, onMouseOver, onMouseOut, myDomain, extractWorkYear) {
   return (
     async function drawRadialChart3() {
+
+
+
+      //curr5
+      setTimeout(() => {
+        var ignoreMe = document.getElementById("circlesDates");
+        window.addEventListener('mouseup', function (event) {
+      
+          if (event.target != ignoreMe && event.target.parentNode != ignoreMe && event.path.length <= 9) {
+            console.log("I am outside")
+      
+            d3.select('#womenInfo')
+              .selectAll('text')
+              .style('opacity', 1)
+            d3.select('#womenInfo3')
+              .selectAll('text')
+              .style('opacity', 1)
+      
+      
+      
+            d3.select("#wavy11")
+              .style("fill", "none")
+              .style("stroke", "#D8D8D8")
+              .style('stroke-width', 41)
+              .style('opacity', 0.5)
+            d3.select("#wavy22")
+              .style("fill", "none")
+              .style("stroke", "#D8D8D8")
+              .style('stroke-width', 41)
+              .style('opacity', 0.5)
+            d3.select("#wavy33")
+              .style("fill", "none")
+              .style("stroke", "#D8D8D8")
+              .style('stroke-width', 41)
+              .style('opacity', 0.3)
+            d3.select("#wavy44")
+              .style("fill", "none")
+              .style("stroke", "#D8D8D8")
+              .style('stroke-width', 41)
+              .style('opacity', 0.1)
+      
+      
+            d3.select("#wavy11L")
+              .style("fill", "none")
+              .style("stroke", "#D8D8D8")
+              .style('stroke-width', 41)
+              .style('opacity', 0.5)
+            d3.select("#wavy22L")
+              .style("fill", "none")
+              .style("stroke", "#D8D8D8")
+              .style('stroke-width', 41)
+              .style('opacity', 0.5)
+            d3.select("#wavy33L")
+              .style("fill", "none")
+              .style("stroke", "#D8D8D8")
+              .style('stroke-width', 41)
+              .style('opacity', 0.3)
+            d3.select("#wavy44L")
+              .style("fill", "none")
+              .style("stroke", "#D8D8D8")
+              .style('stroke-width', 41)
+              .style('opacity', 0.1)
+      
+      
+      
+      
+      
+      
+            d3.select('#barsGroup')
+              .selectAll(`path`)
+              .style('opacity', 0);
+      
+            d3.select('#barsGroup3')
+              .selectAll(`path`)
+              .style('opacity', 0);
+      
+      
+            d3.select('#womenInfo3')
+              .selectAll(`text`)
+              .style("fill", "black")
+              .style("font-weight", "400")
+      
+            d3.select('#womenInfo')   
+              .selectAll(`text`)
+              .style("fill", "black")
+              .style("font-weight", "400")
+          }
+      
+        });
+      }, 500);
+
+
       const height = heightRadial;
       const x = xRadial;
       const y = yRadial;
