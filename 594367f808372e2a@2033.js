@@ -2000,19 +2000,19 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
       setTimeout(() => {
         var ignoreMe = document.getElementById("circlesDates");
         window.addEventListener('mouseup', function (event) {
-      
+
           if (event.target != ignoreMe && event.target.parentNode != ignoreMe && event.path.length <= 9) {
             console.log("I am outside")
-      
+
             d3.select('#womenInfo')
               .selectAll('text')
               .style('opacity', 1)
             d3.select('#womenInfo3')
               .selectAll('text')
               .style('opacity', 1)
-      
-      
-      
+
+
+
             d3.select("#wavy11")
               .style("fill", "none")
               .style("stroke", "#D8D8D8")
@@ -2033,8 +2033,8 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
               .style("stroke", "#D8D8D8")
               .style('stroke-width', 41)
               .style('opacity', 0.1)
-      
-      
+
+
             d3.select("#wavy11L")
               .style("fill", "none")
               .style("stroke", "#D8D8D8")
@@ -2055,34 +2055,53 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
               .style("stroke", "#D8D8D8")
               .style('stroke-width', 41)
               .style('opacity', 0.1)
-      
-      
-      
-      
-      
-      
+
+
+
+
+
+
             d3.select('#barsGroup')
               .selectAll(`path`)
               .style('opacity', 0);
-      
+
             d3.select('#barsGroup3')
               .selectAll(`path`)
               .style('opacity', 0);
-      
-      
+
+
             d3.select('#womenInfo3')
               .selectAll(`text`)
               .style("fill", "black")
               .style("font-weight", "400")
-      
-            d3.select('#womenInfo')   
+
+            d3.select('#womenInfo')
               .selectAll(`text`)
               .style("fill", "black")
               .style("font-weight", "400")
           }
-      
+
+
+
+          d3.select('#imgProfile')
+            .style(
+              'background-image',
+              `none`
+            )
+            .select('p')
+            .text('');
+
+
+            d3.select('#imgProfile3')
+            .style(
+              'background-image',
+              `none`
+            )
+            .select('p')
+            .text('');
+
         });
-      }, 500);
+      }, 700);
 
 
       const height = heightRadial;
@@ -3904,7 +3923,7 @@ function _onMouseOver(d3, extractWorkNAME) {
       d3.select('#imgProfile')
         .style(
           'background-image',
-          `url(/wheel/files/${myImgProfile})`
+          `url(/files/${myImgProfile})`
         )
         .select('p')
         .text(extractWorkNAME(d));
@@ -3913,7 +3932,7 @@ function _onMouseOver(d3, extractWorkNAME) {
       d3.select('#imgProfile3')
         .style(
           'background-image',
-          `url(/wheel/files/${myImgProfile})`
+          `url(/files/${myImgProfile})`
         )
         .select('p')
         .text(extractWorkNAME(d));
