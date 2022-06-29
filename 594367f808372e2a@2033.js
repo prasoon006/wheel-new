@@ -3923,7 +3923,7 @@ function _onMouseOver(d3, extractWorkNAME) {
       d3.select('#imgProfile')
         .style(
           'background-image',
-          `url(/files/${myImgProfile})`
+          `url(/wheel/files/${myImgProfile})`
         )
         .select('p')
         .text(extractWorkNAME(d));
@@ -3932,7 +3932,7 @@ function _onMouseOver(d3, extractWorkNAME) {
       d3.select('#imgProfile3')
         .style(
           'background-image',
-          `url(/files/${myImgProfile})`
+          `url(/wheel/files/${myImgProfile})`
         )
         .select('p')
         .text(extractWorkNAME(d));
