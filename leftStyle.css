@@ -84,6 +84,9 @@ body{
 
 }
 
+
+
+
 .text-right{
     font-size: 1.35vh;
     padding: 0.6vh;
@@ -98,18 +101,23 @@ body{
 }
 
 .scnd-right{
-    height: 42vh;
+    height: 60vh;
     margin: 0;
     width: 60%;
     background-color: #F3F5F5;
 }
 
+
 .third-con{
     margin-left: 5px;
-    margin-top: 0.6vh;
+    margin-top: -183px;
 
-    height: 18vh;
+    height: 37vh;
     background-color: #F3F5F5;
+    width: 38%;
+
+
+
 }
 
 
@@ -132,11 +140,13 @@ body{
 
 
 .fourth-con{
+    display: inline-block;
     margin-left: 5px;
     margin-top: 0.6vh;
-
     height: 18vh;
     background-color: #F3F5F5;
+    float: right;
+    width: 60%;
 }
 
 

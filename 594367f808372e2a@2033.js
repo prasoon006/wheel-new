@@ -462,6 +462,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .append("path")
         .attr("class", "aux")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", "transparent")
         .attr(
           "d",
@@ -495,6 +496,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `${d["COLOR"]}` || colorMain))
         .attr(
           "d",
@@ -535,6 +537,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `${d["COLOR"]}` || colorMain))
         .attr(
           "d",
@@ -568,6 +571,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `${d["COLOR"]}` || colorMain))
         .attr(
           "d",
@@ -670,10 +674,37 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
         // })
         .on('click', function (d, i) {
+
+
+
+
+          d3.select('#barsGroup')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#barsGroup3')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#womenInfo3')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+          d3.select('#womenInfo')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+
+
+
+
           d3.select("#wavy11")
             .style("stroke", "#fab025")
             .style('stroke-width', 42)
             .style('opacity', 0.3)
+
           d3.select('#womenInfo')
             .selectAll('text')
             .style('opacity', (d) => ((d.YEAR_B <= 1940 && d.YEAR_D > 1940) || (d.YEAR_B < 1965 && d.YEAR_D >= 1965) || ((d.YEAR_B1 <= 1940 && d.YEAR_D1 > 1940) || (d.YEAR_B1 < 1965 && d.YEAR_D1 >= 1965))) ? 1 : 0.1)
@@ -747,6 +778,28 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         // })
         .on('click', function (d, i) {
 
+          d3.select('#barsGroup')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#barsGroup3')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#womenInfo3')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+          d3.select('#womenInfo')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+
+
+
+
           d3.select("#wavy22")
             .style("stroke", "#fab025")
             .style('stroke-width', 41)
@@ -819,6 +872,26 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         // })
         .on('click', function (d, i) {
 
+
+
+          d3.select('#barsGroup')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#barsGroup3')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#womenInfo3')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+          d3.select('#womenInfo')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
           d3.select("#wavy33")
             .style("stroke", "#fab025")
             .style('stroke-width', 41)
@@ -884,6 +957,26 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         // })
 
         .on('click', function (d, i) {
+
+
+
+          d3.select('#barsGroup')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#barsGroup3')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#womenInfo3')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+          d3.select('#womenInfo')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
 
           d3.select("#wavy44")
             .style("stroke", "#fab025")
@@ -1345,8 +1438,10 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
 
 
 
+
       //Create an SVG text element and append a textPath element
       svg.append("text")
+        .attr("id", "decision_text_click")
         .append("textPath") //append a textPath to the text element
         .attr("xlink:href", "#wavy") //place the ID of the path here
         .style("text-anchor", "middle") //place the text halfway on the arc
@@ -1356,10 +1451,48 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .text(["Decision Making"])
         .style('font-size', '18px')
 
+      d3.selectAll("#decision_text_click")
+        .on("click", () => {
+          d3.select('#barsGroup')
+            .selectAll(`path:not(path[data-title="DECISION MAKING"])`)
+            .style('opacity', 0);
+          d3.select('#barsGroup')
+            .selectAll(`path[data-title="DECISION MAKING"]`)
+            .style('opacity', 0.6);
+          d3.select('#womenInfo')
+            .selectAll(`text[data-title="DECISION MAKING"]`)
+            .style("fill", (d) => d.COLOR)
+            .style("font-weight", "600")
+          d3.select('#womenInfo')
+            .selectAll(`text:not(text[data-title="DECISION MAKING"])`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+
+
+          d3.select('#barsGroup3')
+            .selectAll(`path:not(path[data-title="DECISION MAKING"])`)
+            .style('opacity', 0);
+          d3.select('#barsGroup3')
+            .selectAll(`path[data-title="DECISION MAKING"]`)
+            .style('opacity', 0.6);
+          d3.select('#womenInfo3')
+            .selectAll(`text[data-title="DECISION MAKING"]`)
+            .style("fill", (d) => d.COLOR)
+            .style("font-weight", "600")
+          d3.select('#womenInfo3')
+            .selectAll(`text:not(text[data-title="DECISION MAKING"])`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+        })
+        .style("cursor", "pointer")
+
+
 
 
       svg.append("text")
         .append("textPath") //append a textPath to the text element
+        .attr("id", "design_text_click")
         .attr("xlink:href", "#wavy") //place the ID of the path here
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "60%")
@@ -1369,8 +1502,48 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .style('font-size', '18px')
 
 
+
+
+      d3.selectAll("#design_text_click")
+        .on("click", () => {
+          d3.select('#barsGroup')
+            .selectAll(`path:not(path[data-title="DESIGN"])`)
+            .style('opacity', 0);
+          d3.select('#barsGroup')
+            .selectAll(`path[data-title="DESIGN"]`)
+            .style('opacity', 0.6);
+          d3.select('#womenInfo')
+            .selectAll(`text[data-title="DESIGN"]`)
+            .style("fill", (d) => d.COLOR)
+            .style("font-weight", "600")
+          d3.select('#womenInfo')
+            .selectAll(`text:not(text[data-title="DESIGN"])`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+
+
+          d3.select('#barsGroup3')
+            .selectAll(`path:not(path[data-title="DESIGN"])`)
+            .style('opacity', 0);
+          d3.select('#barsGroup3')
+            .selectAll(`path[data-title="DESIGN"]`)
+            .style('opacity', 0.6);
+          d3.select('#womenInfo3')
+            .selectAll(`text[data-title="DESIGN"]`)
+            .style("fill", (d) => d.COLOR)
+            .style("font-weight", "600")
+          d3.select('#womenInfo3')
+            .selectAll(`text:not(text[data-title="DESIGN"])`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+        })
+        .style("cursor", "pointer")
+
+
       svg.append("text")
         .append("textPath") //append a textPath to the text element
+        .attr("id", "users_text_click")
         .attr("xlink:href", "#wavy") //place the ID of the path here
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "47%")
@@ -1379,8 +1552,49 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .text(["Users"])
         .style('font-size', '18px')
 
+
+
+      d3.selectAll("#users_text_click")
+
+        .on("click", () => {
+
+          d3.select('#barsGroup')
+            .selectAll(`path:not(path[data-title="USERS"])`)
+            .style('opacity', 0);
+          d3.select('#barsGroup')
+            .selectAll(`path[data-title="USERS"]`)
+            .style('opacity', 0.6);
+          d3.select('#womenInfo')
+            .selectAll(`text[data-title="USERS"]`)
+            .style("fill", (d) => d.COLOR)
+            .style("font-weight", "600")
+          d3.select('#womenInfo')
+            .selectAll(`text:not(text[data-title="USERS"])`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+
+          d3.select('#barsGroup3')
+            .selectAll(`path:not(path[data-title="USERS"])`)
+            .style('opacity', 0);
+          d3.select('#barsGroup3')
+            .selectAll(`path[data-title="USERS"]`)
+            .style('opacity', 0.6);
+          d3.select('#womenInfo3')
+            .selectAll(`text[data-title="USERS"]`)
+            .style("fill", (d) => d.COLOR)
+            .style("font-weight", "600")
+          d3.select('#womenInfo3')
+            .selectAll(`text:not(text[data-title="USERS"])`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+        })
+
+        .style("cursor", "pointer")
+
       svg.append("text")
         .append("textPath") //append a textPath to the text element
+        .attr("id", "knowledge_text_click")
         .attr("xlink:href", "#wavy") //place the ID of the path here
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "20%")
@@ -1388,6 +1602,45 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .style('font-weight', '800')
         .text(["Knowledge Transfer"])
         .style('font-size', '18px')
+
+
+
+
+      d3.selectAll("#knowledge_text_click")
+        .on("click", () => {
+          d3.select('#barsGroup')
+            .selectAll(`path:not(path[data-title="KNOWLEDGE TRANSFER"])`)
+            .style('opacity', 0);
+          d3.select('#barsGroup')
+            .selectAll(`path[data-title="KNOWLEDGE TRANSFER"]`)
+            .style('opacity', 0.6);
+          d3.select('#womenInfo')
+            .selectAll(`text[data-title="KNOWLEDGE TRANSFER"]`)
+            .style("fill", (d) => d.COLOR)
+            .style("font-weight", "600")
+          d3.select('#womenInfo')
+            .selectAll(`text:not(text[data-title="KNOWLEDGE TRANSFER"])`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+
+
+          d3.select('#barsGroup3')
+            .selectAll(`path:not(path[data-title="KNOWLEDGE TRANSFER"])`)
+            .style('opacity', 0);
+          d3.select('#barsGroup3')
+            .selectAll(`path[data-title="KNOWLEDGE TRANSFER"]`)
+            .style('opacity', 0.6);
+          d3.select('#womenInfo3')
+            .selectAll(`text[data-title="KNOWLEDGE TRANSFER"]`)
+            .style("fill", (d) => d.COLOR)
+            .style("font-weight", "600")
+          d3.select('#womenInfo3')
+            .selectAll(`text:not(text[data-title="KNOWLEDGE TRANSFER"])`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+        })
+        .style("cursor", "pointer")
 
 
 
@@ -1433,6 +1686,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
           // NAMES (anchors to wikipedia links)
           el.append("text")
             .attr("data-id", (d) => d.id)
+            .attr("data-title", (d) => d.TITLE)
             .style('opacity', 1)
 
             .attr("x", function (d) {
@@ -1461,6 +1715,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
             })
           el.append("text")
             .attr("data-id", (d) => d.id)
+            .attr("data-title", (d) => d.TITLE)
             .style('opacity', 1)
 
             .attr("x", function (d) {
@@ -1595,6 +1850,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `${d["COLOR"]}` || colorMain))
         .attr(
           "d",
@@ -1673,6 +1929,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `${d["COLOR"]}` || colorMain))
         .attr(
           "d",
@@ -1709,6 +1966,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `${d["COLOR"]}` || colorMain))
         .attr(
           "d",
@@ -1752,6 +2010,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `${d["COLOR"]}` || colorMain))
         .attr(
           "d",
@@ -1788,6 +2047,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `${d["COLOR"]}` || colorMain))
         .attr(
           "d",
@@ -1834,6 +2094,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `${d["COLOR"]}` || colorMain))
         .attr(
           "d",
@@ -1870,6 +2131,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `${d["COLOR"]}` || colorMain))
         .attr(
           "d",
@@ -2061,6 +2323,8 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
 
 
 
+
+            //curr222
             d3.select('#barsGroup')
               .selectAll(`path`)
               .style('opacity', 0);
@@ -2083,8 +2347,8 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
 
 
           d3.selectAll("#centerText")
-          .selectAll('text')
-          .style('opacity',1);
+            .selectAll('text')
+            .style('opacity', 1);
 
 
           d3.select('#imgProfile')
@@ -2096,7 +2360,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
             .text('');
 
 
-            d3.select('#imgProfile3')
+          d3.select('#imgProfile3')
             .style(
               'background-image',
               `none`
@@ -2369,6 +2633,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
 
         .on('click', function (d, i) {
 
+
           d3.select(this)
             .style("stroke", "#fab025")
             .style('stroke-width', 41)
@@ -2424,6 +2689,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
         .append("path")
         .attr("class", "aux")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", "transparent")
         .attr(
           "d",
@@ -2457,6 +2723,8 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
+
         .attr("fill", (d => `${d["COLOR"]}` || colorMain))
         .attr(
           "d",
@@ -2497,6 +2765,8 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
+
         .attr("fill", (d => `#6E7777` || colorMain))
         .attr(
           "d",
@@ -2530,6 +2800,8 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
+
         .attr("fill", (d => `#6E7777` || colorMain))
         .attr(
           "d",
@@ -2621,6 +2893,31 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
         .attr("fill", "transparent")
 
         .on('click', function (d, i) {
+
+
+
+          //curr333
+
+
+          d3.select('#barsGroup')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#barsGroup3')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#womenInfo3')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+          d3.select('#womenInfo')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+
           d3.select("#wavy11L")
             .style("stroke", "#fab025")
             .style('stroke-width', 42)
@@ -2665,6 +2962,25 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
 
 
         .on('click', function (d, i) {
+
+
+          d3.select('#barsGroup')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#barsGroup3')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#womenInfo3')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+          d3.select('#womenInfo')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
 
           d3.select("#wavy22L")
             .style("stroke", "#fab025")
@@ -2716,6 +3032,26 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
 
 
         .on('click', function (d, i) {
+
+
+
+          d3.select('#barsGroup')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#barsGroup3')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#womenInfo3')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+          d3.select('#womenInfo')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
 
           d3.select("#wavy33L")
             .style("stroke", "#fab025")
@@ -2769,6 +3105,25 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
 
 
         .on('click', function (d, i) {
+
+
+          d3.select('#barsGroup')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#barsGroup3')
+            .selectAll(`path`)
+            .style('opacity', 0);
+
+          d3.select('#womenInfo3')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
+
+          d3.select('#womenInfo')
+            .selectAll(`text`)
+            .style("fill", "black")
+            .style("font-weight", "400")
 
           d3.select("#wavy44L")
             .style("stroke", "#fab025")
@@ -3212,6 +3567,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
       //Create an SVG text element and append a textPath element
       svg.append("text")
         .append("textPath") //append a textPath to the text element
+        .attr("id", "decision_text_click")
         .attr("xlink:href", "#wavy") //place the ID of the path here
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "80%")
@@ -3224,6 +3580,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
 
       svg.append("text")
         .append("textPath") //append a textPath to the text element
+        .attr("id", "design_text_click")
         .attr("xlink:href", "#wavy") //place the ID of the path here
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "60%")
@@ -3235,6 +3592,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
 
       svg.append("text")
         .append("textPath") //append a textPath to the text element
+        .attr("id", "users_text_click")
         .attr("xlink:href", "#wavy") //place the ID of the path here
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "47%")
@@ -3245,6 +3603,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
 
       svg.append("text")
         .append("textPath") //append a textPath to the text element
+        .attr("id", "knowledge_text_click")
         .attr("xlink:href", "#wavy") //place the ID of the path here
         .style("text-anchor", "middle") //place the text halfway on the arc
         .attr("startOffset", "20%")
@@ -3297,6 +3656,8 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
           // NAMES (anchors to wikipedia links)
           el.append("text")
             .attr("data-id", (d) => d.id)
+
+            .attr("data-title", (d) => d.TITLE)
             .attr("id", "name2-id")
             .style('opacity', 1)
 
@@ -3326,6 +3687,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
             })
           el.append("text")
             .attr("data-id", (d) => d.id)
+            .attr("data-title", (d) => d.TITLE)
             .style('opacity', 1)
 
             .attr("x", function (d) {
@@ -3455,6 +3817,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `#6E7777` || colorMain))
         .attr(
           "d",
@@ -3533,6 +3896,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `#6E7777` || colorMain))
         .attr(
           "d",
@@ -3547,6 +3911,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
 
         )
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .on('mouseover', function (d, i) {
 
 
@@ -3573,6 +3938,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `#6E7777` || colorMain))
         .attr(
           "d",
@@ -3616,6 +3982,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `#6E7777` || colorMain))
         .attr(
           "d",
@@ -3652,6 +4019,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `#6E7777` || colorMain))
         .attr(
           "d",
@@ -3698,6 +4066,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `#6E7777` || colorMain))
         .attr(
           "d",
@@ -3734,6 +4103,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
         .enter()
         .append("path")
         .attr("data-id", (d) => d.id)
+        .attr("data-title", (d) => d.TITLE)
         .attr("fill", (d => `#6E7777` || colorMain))
         .attr(
           "d",
@@ -3850,6 +4220,63 @@ function _onMouseOver(d3, extractWorkNAME) {
 
 
 
+      //curr444
+
+      d3.select("#wavy22L")
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.5)
+
+
+      d3.select("#wavy33L")
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.3)
+
+
+
+      d3.select("#wavy11L")
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.5)
+
+        d3.select("#wavy44L")
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.1)
+
+
+        d3.select("#wavy22")
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.5)
+
+
+      d3.select("#wavy33")
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.3)
+
+
+
+      d3.select("#wavy11")
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.5)
+
+        d3.select("#wavy44")
+        .style("fill", "none")
+        .style("stroke", "#D8D8D8")
+        .style('stroke-width', 41)
+        .style('opacity', 0.1)
+
 
       //curr4
       d3.select('#barsGroup')
@@ -3928,27 +4355,27 @@ function _onMouseOver(d3, extractWorkNAME) {
       d3.select('#imgProfile')
         .style(
           'background-image',
-          `url(/wheel/files/${myImgProfile})`,
+          `url(/wheel-new/files/${myImgProfile})`,
         )
         .select('p')
         .text(extractWorkNAME(d));
-      
-     
 
-      
 
- //wheel
+
+
+
+      //wheel
       d3.select('#imgProfile3')
         .style(
           'background-image',
-          `url(/wheel/files/${myImgProfile})`
+          `url(/wheel-new/files/${myImgProfile})`
         )
         .select('p')
         .text(extractWorkNAME(d));
 
-        d3.selectAll("#centerText")
+      d3.selectAll("#centerText")
         .selectAll('text')
-        .style('opacity',0.1);
+        .style('opacity', 0.1);
 
 
 
