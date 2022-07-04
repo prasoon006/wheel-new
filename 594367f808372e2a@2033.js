@@ -1441,7 +1441,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
                 ? -y(2045)
                 : y(2045)
             })
-            .attr("y", 0)
+            .attr("y", -12)
             .text((d) => `${d.NAME} `)
             .style("font-size", "20px")
             .attr('font-family', 'Inter')
@@ -1469,7 +1469,7 @@ function _drawRadialChart(heightRadial, xRadial, yRadial, d3, width, margin, loc
                 ? -y(2045)
                 : y(2045)
             })
-            .attr("y", 25)
+            .attr("y", 13)
             .text((d) => `${d.SURNAME}`)
             .style("font-size", "20px")
             .attr('font-family', 'Inter')
@@ -2081,6 +2081,10 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
               .style("font-weight", "400")
           }
 
+
+          d3.selectAll("#centerText")
+          .selectAll('text')
+          .style('opacity',1);
 
 
           d3.select('#imgProfile')
@@ -3302,7 +3306,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
                 ? -y(2045)
                 : y(2045)
             })
-            .attr("y", 0)
+            .attr("y", -12)
             .text((d) => `${d.NAME} `)
             .style("font-size", "20px")
             .attr('font-family', 'Inter')
@@ -3330,7 +3334,7 @@ function _drawRadialChart3(heightRadial, xRadial, yRadial, d3, width, margin, lo
                 ? -y(2045)
                 : y(2045)
             })
-            .attr("y", 25)
+            .attr("y", 13)
             .text((d) => `${d.SURNAME}`)
             .style("font-size", "20px")
             .attr('font-family', 'Inter')
@@ -3920,15 +3924,20 @@ function _onMouseOver(d3, extractWorkNAME) {
         .style('opacity', 0.2);
 
       // Update bckg img
+      //wheel
       d3.select('#imgProfile')
         .style(
           'background-image',
-          `url(/wheel/files/${myImgProfile})`
+          `url(/wheel/files/${myImgProfile})`,
         )
         .select('p')
         .text(extractWorkNAME(d));
+      
+     
 
+      
 
+ //wheel
       d3.select('#imgProfile3')
         .style(
           'background-image',
@@ -3936,6 +3945,10 @@ function _onMouseOver(d3, extractWorkNAME) {
         )
         .select('p')
         .text(extractWorkNAME(d));
+
+        d3.selectAll("#centerText")
+        .selectAll('text')
+        .style('opacity',0.1);
 
 
 
